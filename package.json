@@ -1,0 +1,24 @@
+{
+  "name": "reaction",
+  "version": "0.0.0",
+  "description": "Full-blown React/Flux application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albburtsev/reaction.git"
+  },
+  "keywords": [
+    "React",
+    "Flux",
+    "App"
+  ],
+  "author": "Alexander Burtsev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albburtsev/reaction/issues"
+  },
+  "homepage": "https://github.com/albburtsev/reaction#readme"
+}
