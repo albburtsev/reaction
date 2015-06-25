@@ -8,13 +8,12 @@ var path = require('path'),
 // @todo: minified production build (sourcemap)
 // @todo: eslint preloader
 // @todo: standalone css bundle (sourcemap)
-// @todo: hot-loader
 
 var config = {
-    entry: {
-        app: './app.js'
-    },
-    context: sourcePath,
+    entry: [
+        'webpack/hot/dev-server',
+        path.join(sourcePath, 'app.js')
+    ],
     resolve: {
         root: [sourcePath]
     },

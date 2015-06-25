@@ -1,34 +1,24 @@
 import React from 'react';
 
-// router and predefined routes
 import routes from 'routes';
-import {Router, Route, DefaultRoute, NotFoundRoute} from 'react-router';
+import Router, {Route, DefaultRoute, NotFoundRoute} from 'react-router';
 
-// root component
-import {Root} from 'components/Root/Root.jsx';
-
-// page components
+import Root from 'components/Root/Root.jsx';
 import PageEntry from 'components/PageEntry/PageEntry.jsx';
 
-// all available routes
 var config = (
-    <Route handler={Root} path="/">
+    <Route handler={Root}>
         <DefaultRoute name={routes.ROUTE_ENTRY} handler={PageEntry} />
-        {/*
-        <Route name={routes.ROUTE_SIGNIN} path="auth/signin" handler={PageSignin} />
-        <NotFoundRoute handler={Page404} />
-        */}
     </Route>
 );
 
-let rootElement = document.querySelector('.root');
+// @todo: use another container instead of document.body
+let rootElement = document.body;
 
+// Run our application with support of HTML5 History API
 Router.run(config, Router.HistoryLocation, function (Handler, state) {
     React.render(<Handler />, rootElement, () => {
-        /**
-         * Put your redirect here
-         */
-
-        console.info('Router', router.getCurrentPath());
+        // Put your redirects here
+        // console.info(this.getCurrentPath());
     });
 });
