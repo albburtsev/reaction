@@ -15,3 +15,10 @@ Expected:
  * Unit-tests — [Jest](https://facebook.github.io/jest/) and Mocha
  * CSS regression tests — [Gemini](https://github.com/gemini-testing/gemini)
  * l10n — ?
+
+## Relevant links
+
+### Testing
+
+* [Testing with ReactJS at Codecademy](https://medium.com/about-codecademy/testing-with-reactjs-at-codecademy-2aec88cc4e36) — this guys prefer Karma and Jasmine instead of Jest (+);
+* [How to easily test React components with Karma and Webpack](http://qiita.com/kimagure/items/f2d8d53504e922fe3c5c)
