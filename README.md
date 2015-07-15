@@ -16,6 +16,17 @@ Expected:
  * CSS regression tests — [Gemini](https://github.com/gemini-testing/gemini)
  * l10n — ?
 
+## Build tools and dev-server
+
+[Webpack-dev-server](http://webpack.github.io/docs/webpack-dev-server.html) in hot mode used as developer server. Just run it in project root:
+
+```
+npm i
+npm start
+```
+
+Then open [localhost:8080](http://localhost:8080/) in your browser and try to edit any component.
+
 ## Relevant links
 
 ### Testing

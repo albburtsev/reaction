@@ -5,6 +5,7 @@ var path = require('path'),
     buildPath = path.join(__dirname, 'build/'),
     nodePath = path.join(__dirname, 'node_modules');
 
+// @todo: exclude webpack-dev-server from production build
 // @todo: minified production build (sourcemap)
 // @todo: eslint preloader
 // @todo: standalone css bundle (sourcemap)
@@ -22,6 +23,7 @@ var config = {
     },
     output: {
         path: buildPath,
+        publicPath: 'build/',
         filename: '[name].bundle.js'
     },
     module: {
