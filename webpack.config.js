@@ -1,28 +1,40 @@
 'use strict';
 
-var path = require('path'),
-    sourcePath = path.join(__dirname, 'src/'),
-    buildPath = path.join(__dirname, 'build/'),
-    nodePath = path.join(__dirname, 'node_modules');
+var _ = require('lodash'),
+    path = require('path'),
+    webpack = require('webpack'),
+    project = require('./package.json'),
 
-// @todo: exclude webpack-dev-server from production build
-// @todo: minified production build (sourcemap)
+    TARGET = process.env.TARGET,
+    ROOT_PATH = path.resolve(__dirname),
+    SOURCE_PATH = path.join(ROOT_PATH, 'src/'),
+    BUILD_PATH = path.join(ROOT_PATH, 'build/'),
+    NODE_PATH = path.join(ROOT_PATH, 'node_modules'),
+
+    BANNER = _.template(
+        '<%= name %> v<%= version %>\n' +
+        '<%= description %>\n' +
+        '@author <%= author %>'
+    )(project);
+ 
+// @todo: dev-configuration for proxy server
 // @todo: eslint preloader
 // @todo: standalone css bundle (sourcemap)
+// @todo: sourcemap only for chunk with real sources
+// @todo: debug-mode
 
 var config = {
     entry: [
-        'webpack/hot/dev-server',
-        path.join(sourcePath, 'app.js')
+        path.join(SOURCE_PATH, 'app.js')
     ],
     resolve: {
-        root: [sourcePath]
+        root: [SOURCE_PATH]
     },
     resolveLoader: {
-        root: [nodePath]
+        root: [NODE_PATH]
     },
     output: {
-        path: buildPath,
+        path: BUILD_PATH,
         publicPath: 'build/',
         filename: '[name].bundle.js'
     },
@@ -33,7 +45,26 @@ var config = {
                 loader: 'babel-loader'
             }
         ]
-    }
+    },
+    plugins: []
 };
+
+if (TARGET !== 'production') {
+    // Adds hot loader for webpack-dev-server in bundles
+    config.entry.unshift('webpack/hot/dev-server');
+} else {
+    // Minifies all bundles in production build
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        },
+        output: {
+            comments: false
+        }
+    }));
+
+    // Adds banner to minified bundles
+    config.plugins.push(new webpack.BannerPlugin(BANNER));
+}
 
 module.exports = config;

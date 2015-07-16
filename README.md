@@ -27,6 +27,12 @@ npm start
 
 Then open [localhost:8080](http://localhost:8080/) in your browser and try to edit any component.
 
+If you want to run production build (minified and optimized bundles without dev-server) then run:
+
+```
+npm run build
+```
+
 ## Relevant links
 
 ### Testing
