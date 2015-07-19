@@ -1,7 +1,6 @@
 var b = Block('page-entry');
 
-import React from 'react';
-import css from './PageEntry.styl';
+import './PageEntry.styl';
 
 /**
  * Entry point of our application

@@ -1,5 +1,4 @@
-import React from 'react';
-import css from './app.styl'
+import './app.styl'
 
 import routes from 'routes';
 import Router, {Route, DefaultRoute, NotFoundRoute} from 'react-router';
