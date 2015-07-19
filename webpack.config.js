@@ -1,5 +1,3 @@
-'use strict';
-
 var _ = require('lodash'),
     path = require('path'),
     webpack = require('webpack'),
@@ -19,11 +17,10 @@ var _ = require('lodash'),
     )(project);
  
 // @todo: dev-configuration for proxy server
-// @todo: eslint preloader
-// @todo: standalone css bundle (sourcemap)
 // @todo: sourcemap only for chunk with real sources
 // @todo: debug-mode
 // @todo: system notifications
+// @todo: add .babelrc
 
 var config = {
     entry: {
@@ -42,6 +39,12 @@ var config = {
         filename: '[name].bundle.js'
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.(js|jsx)$/,
+                loader: 'eslint-loader'
+            }
+        ],
         loaders: [
             {
                 test: /\.(js|jsx)$/,
