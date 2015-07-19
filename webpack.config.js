@@ -24,9 +24,10 @@ var _ = require('lodash'),
 // @todo: debug-mode
 
 var config = {
-    entry: [
-        path.join(SOURCE_PATH, 'app.js')
-    ],
+    entry: {
+        app: [path.join(SOURCE_PATH, 'app.js')],
+        vendors: ['react']
+    },
     resolve: {
         root: [SOURCE_PATH]
     },
@@ -46,12 +47,14 @@ var config = {
             }
         ]
     },
-    plugins: []
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js')
+    ]
 };
 
 if (TARGET !== 'production') {
     // Adds hot loader for webpack-dev-server in bundles
-    config.entry.unshift('webpack/hot/dev-server');
+    config.entry.app.unshift('webpack/hot/dev-server');
 } else {
     // Minifies all bundles in production build
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
