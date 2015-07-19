@@ -44,6 +44,10 @@ var config = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.styl$/,
+                loader: 'style-loader!css-loader!stylus-loader'
             }
         ]
     },

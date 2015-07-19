@@ -1,4 +1,5 @@
-var b = Block('page-entry');
+var b = Block('page-entry'),
+    css = require('./PageEntry.styl');
 
 import React from 'react';
 
