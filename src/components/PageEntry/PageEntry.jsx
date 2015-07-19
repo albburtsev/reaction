@@ -1,7 +1,7 @@
-var b = Block('page-entry'),
-    css = require('./PageEntry.styl');
+var b = Block('page-entry');
 
 import React from 'react';
+import css from './PageEntry.styl';
 
 /**
  * Entry point of our application
