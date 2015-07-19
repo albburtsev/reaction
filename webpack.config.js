@@ -3,6 +3,7 @@
 var _ = require('lodash'),
     path = require('path'),
     webpack = require('webpack'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     project = require('./package.json'),
 
     TARGET = process.env.TARGET,
@@ -22,6 +23,7 @@ var _ = require('lodash'),
 // @todo: standalone css bundle (sourcemap)
 // @todo: sourcemap only for chunk with real sources
 // @todo: debug-mode
+// @todo: system notifications
 
 var config = {
     entry: {
@@ -44,10 +46,6 @@ var config = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader'
-            },
-            {
-                test: /\.styl$/,
-                loader: 'style-loader!css-loader!stylus-loader'
             }
         ]
     },
@@ -62,6 +60,12 @@ var config = {
 if (TARGET !== 'production') {
     // Adds hot loader for webpack-dev-server in bundles
     config.entry.app.unshift('webpack/hot/dev-server');
+
+    // Stylus loader
+    config.module.loaders.push({
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader'
+    });
 } else {
     // Minifies all bundles in production build
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
@@ -71,6 +75,15 @@ if (TARGET !== 'production') {
         output: {
             comments: false
         }
+    }));
+
+    // Separate bundle for css
+    config.module.loaders.push({
+        test: /\.styl$/,
+        loader:  ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
+    });
+    config.plugins.push(new ExtractTextPlugin('[name].css', {
+        allChunks: true
     }));
 
     // Adds banner to minified bundles
