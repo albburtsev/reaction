@@ -48,7 +48,10 @@ var config = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js')
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
+        new webpack.ProvidePlugin({
+            'Block': 'bem-cn'
+        })
     ]
 };
 

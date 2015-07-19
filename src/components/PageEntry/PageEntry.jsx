@@ -1,3 +1,5 @@
+var b = Block('page-entry');
+
 import React from 'react';
 
 /**
@@ -6,8 +8,8 @@ import React from 'react';
 var PageEntry = React.createClass({
     render() {
         return (
-            <div className="page-entry">
-                <p>Hello, world!</p>
+            <div className={b}>
+                <h1 className={b('title')}>Entry page</h1>
             </div>
         );
     }
