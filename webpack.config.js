@@ -84,7 +84,7 @@ if (TARGET !== 'production') {
     // Separate bundle for css
     config.module.loaders.push({
         test: /\.styl$/,
-        loader:  ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
     });
     config.plugins.push(new ExtractTextPlugin('[name].css', {
         allChunks: true
