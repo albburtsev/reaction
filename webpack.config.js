@@ -15,7 +15,7 @@ var _ = require('lodash'),
         '<%= description %>\n' +
         '@author <%= author %>'
     )(project);
- 
+
 // @todo: dev-configuration for proxy server
 // @todo: sourcemap only for chunk with real sources
 // @todo: debug-mode
@@ -55,8 +55,8 @@ var config = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
         new webpack.ProvidePlugin({
-            'React': 'react',
-            'Block': 'bem-cn'
+            React: 'react',
+            block: 'bem-cn'
         })
     ]
 };

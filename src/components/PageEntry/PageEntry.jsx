@@ -1,11 +1,11 @@
-var b = Block('page-entry');
+let b = block('page-entry');
 
 import './PageEntry.styl';
 
 /**
  * Entry point of our application
  */
-var PageEntry = React.createClass({
+let PageEntry = React.createClass({
     render() {
         return (
             <div className={b}>
