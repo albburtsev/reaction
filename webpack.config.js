@@ -4,13 +4,13 @@ var _ = require('lodash'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     project = require('./package.json'),
 
-    TARGET = process.env.TARGET,
-    ROOT_PATH = path.resolve(__dirname),
-    SOURCE_PATH = path.join(ROOT_PATH, 'src/'),
-    BUILD_PATH = path.join(ROOT_PATH, 'build/'),
-    NODE_PATH = path.join(ROOT_PATH, 'node_modules'),
+    rootPath = path.resolve(__dirname),
+    sourcePath = path.join(rootPath, 'src/'),
+    buildPath = path.join(rootPath, 'build/'),
+    nodePath = path.join(rootPath, 'node_modules'),
 
-    BANNER = _.template(
+    isDevelopment = process.env.NODE_ENV !== 'production',
+    banner = _.template(
         '<%= name %> v<%= version %>\n' +
         '<%= description %>\n' +
         '@author <%= author %>'
@@ -22,20 +22,73 @@ var _ = require('lodash'),
 // @todo: system notifications
 // @todo: add .babelrc
 
-var config = {
+var entryApp = [path.join(sourcePath, 'app.js')],
+    plugins = [
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
+        new webpack.ProvidePlugin({
+            React: 'react',
+            block: 'bem-cn'
+        })
+    ],
+    jsLoaders = ['babel-loader'],
+    stylusLoader = 'style-loader!css-loader!stylus-loader';
+
+/*
+ * Development build:
+ * — react-hot-loader
+ */
+if (isDevelopment) {
+    entryApp = [
+        'webpack-dev-server/client?http://0.0.0.0:3000',
+        'webpack/hot/only-dev-server',
+    ].concat(entryApp);
+
+    plugins = plugins.concat([
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ]);
+
+    jsLoaders.unshift('react-hot');
+
+/*
+ * Production build:
+ * — minification
+ * — sepatate bundle for css
+ * — banner for minified files
+ */
+} else {
+    plugins = plugins.concat([
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            output: {
+                comments: false
+            }
+        }),
+        new ExtractTextPlugin('[name].css', {
+            allChunks: true
+        }),
+        new webpack.BannerPlugin(banner)
+    ]);
+
+    stylusLoader = ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader');
+}
+
+module.exports = {
     entry: {
-        app: [path.join(SOURCE_PATH, 'app.js')],
+        app: entryApp,
         vendors: ['react']
     },
     resolve: {
-        root: [SOURCE_PATH]
+        root: [sourcePath]
     },
     resolveLoader: {
-        root: [NODE_PATH]
+        root: [nodePath]
     },
     output: {
-        path: BUILD_PATH,
-        publicPath: 'build/',
+        path: buildPath,
+        publicPath: '/build/',
         filename: '[name].bundle.js'
     },
     module: {
@@ -48,50 +101,14 @@ var config = {
         loaders: [
             {
                 test: /\.(js|jsx)$/,
-                loader: 'babel-loader'
+                exclude: nodePath,
+                loaders: jsLoaders
+            },
+            {
+                test: /\.styl$/,
+                loader: stylusLoader
             }
         ]
     },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
-        new webpack.ProvidePlugin({
-            React: 'react',
-            block: 'bem-cn'
-        })
-    ]
+    plugins: plugins
 };
-
-if (TARGET !== 'production') {
-    // Adds hot loader for webpack-dev-server in bundles
-    config.entry.app.unshift('webpack/hot/dev-server');
-
-    // Stylus loader
-    config.module.loaders.push({
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader'
-    });
-} else {
-    // Minifies all bundles in production build
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false
-        },
-        output: {
-            comments: false
-        }
-    }));
-
-    // Separate bundle for css
-    config.module.loaders.push({
-        test: /\.styl$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
-    });
-    config.plugins.push(new ExtractTextPlugin('[name].css', {
-        allChunks: true
-    }));
-
-    // Adds banner to minified bundles
-    config.plugins.push(new webpack.BannerPlugin(BANNER));
-}
-
-module.exports = config;
