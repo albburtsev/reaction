@@ -46,3 +46,7 @@ npm run build
 * [Unit testing React components without a DOM](http://simonsmith.io/unit-testing-react-components-without-a-dom/)
 * [Why I use Tape Instead of Mocha & So Should You](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
 * [Approaches to testing React components - an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/)
+
+### Assets
+
+* [Long-term caching of static assets with Webpack](https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95)
