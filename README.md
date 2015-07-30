@@ -51,3 +51,8 @@ npm run build
 ### Assets
 
 * [Long-term caching of static assets with Webpack](https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95)
+
+### Redux
+
+* [Super minimal React + Redux app](https://gist.github.com/gaearon/074b0905337a6a835d82)
+* [New redux documentation](http://gaearon.github.io/redux/)
