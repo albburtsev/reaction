@@ -55,6 +55,7 @@ if (isDevelopment) {
  * — minification
  * — sepatate bundle for css
  * — banner for minified files
+ * — optimizied production build for React (thru NODE_ENV variable)
  */
 } else {
     plugins = plugins.concat([
@@ -64,6 +65,11 @@ if (isDevelopment) {
             },
             output: {
                 comments: false
+            }
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
             }
         }),
         new ExtractTextPlugin('[name].css', {
