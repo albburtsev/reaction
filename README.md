@@ -45,3 +45,14 @@ npm run build
 * [How to easily test React components with Karma and Webpack](http://qiita.com/kimagure/items/f2d8d53504e922fe3c5c)
 * [Unit testing React components without a DOM](http://simonsmith.io/unit-testing-react-components-without-a-dom/)
 * [Why I use Tape Instead of Mocha & So Should You](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
+* [Approaches to testing React components - an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/)
+* [React Testing Tricks](http://react.rocks/blog/post/react-testing-tricks/)
+
+### Assets
+
+* [Long-term caching of static assets with Webpack](https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95)
+
+### Redux
+
+* [Super minimal React + Redux app](https://gist.github.com/gaearon/074b0905337a6a835d82)
+* [New redux documentation](http://gaearon.github.io/redux/)
