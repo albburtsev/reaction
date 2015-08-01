@@ -19,6 +19,7 @@ var _ = require('lodash'),
 // @todo: dev-configuration for proxy server
 // @todo: sourcemap only for chunk with real sources
 // @todo: debug-mode
+// @todo: stage=0 and static properties for default props and prop types
 
 var entryApp = [path.join(sourcePath, 'app.js')],
     plugins = [
@@ -57,6 +58,7 @@ if (isDevelopment) {
  */
 } else {
     plugins = plugins.concat([
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
@@ -93,7 +95,7 @@ module.exports = {
     output: {
         path: buildPath,
         publicPath: '/build/',
-        filename: '[name].bundle.js'
+        filename: 'app.bundle.js'
     },
     module: {
         preLoaders: [
@@ -111,6 +113,14 @@ module.exports = {
             {
                 test: /\.styl$/,
                 loader: stylusLoader
+            },
+            {
+                test: /\.css$/,
+                loaders: ['style', 'css']
+            },
+            {
+                test: /\.png$/,
+                loader: 'file-loader'
             }
         ]
     },
