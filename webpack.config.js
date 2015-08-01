@@ -19,7 +19,6 @@ var _ = require('lodash'),
 // @todo: dev-configuration for proxy server
 // @todo: sourcemap only for chunk with real sources
 // @todo: debug-mode
-// @todo: add .babelrc
 
 var entryApp = [path.join(sourcePath, 'app.js')],
     plugins = [
