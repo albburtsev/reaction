@@ -53,6 +53,7 @@ TODO
 * Build tool — [Webpack](http://webpack.github.io/)
 * Unit-tests — [Jest](https://facebook.github.io/jest/) and Mocha
 * CSS regression tests — [Gemini](https://github.com/gemini-testing/gemini)
+* Static typing for JavaScript — [Flow](https://github.com/facebook/flow)
 * transport — ?
 * l10n — ?
 
