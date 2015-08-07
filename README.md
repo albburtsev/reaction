@@ -1,43 +1,67 @@
 # Reaction
 
-The main goal of this project is implementation of modern [React](http://facebook.github.io/react/)-based app, that will be interact with server via REST API.
+Reaction is yet another starter kit for quick development SPA (Single Page Applications). It was elaborated with most cutting-edge technologies, that available nowadays. All you need is ~~love [React](http://facebook.github.io/react/) and be sane~~ scrutinize this file, clone the project and run development server!
 
-Expected:
-
- * React components: [high-order](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750) (HOC) top level components and pure nested components
- * Flux architecture — [Redux](https://github.com/gaearon/redux)
- * Immutable stores with [Immutable.js](https://facebook.github.io/immutable-js/)
- * Powerful router — [React-router](https://github.com/rackt/react-router/)
- * ES6/JSX and [Babel.js](http://babeljs.io/)
- * CSS preprocessor — [Stylus](https://learnboost.github.io/stylus/)
- * [Fetch](https://fetch.spec.whatwg.org/) as a transport
- * Build tool — [Webpack](http://webpack.github.io/)
- * Unit-tests — [Jest](https://facebook.github.io/jest/) and Mocha
- * CSS regression tests — [Gemini](https://github.com/gemini-testing/gemini)
- * l10n — ?
-
-## Build tools and dev-server
-
-[Webpack-dev-server](http://webpack.github.io/docs/webpack-dev-server.html) in hot mode used as developer server. Just run it in project root:
+Let's try
 
 ```
-npm i
+git clone git@github.com:albburtsev/reaction.git
+cd reaction/
 npm start
 ```
 
 Then open [localhost:3000](http://localhost:3000/) in your browser and try to edit any component.
 
-If you want to run production build (minified and optimized bundles without dev-server) then run:
+Do you want to run production build? Just run:
 
 ```
 npm run build
 ```
 
+Now all minified and optimized assets you can find in ```/build``` directory.
+
+## Components
+
+### Smart and dump components
+
+TODO
+
+### Atomic design
+
+TODO
+
+## Routes, transitions and redirects
+
+TODO
+
+## Stores and actions
+
+TODO
+
+## REST API
+
+TODO
+
+## Technologies
+
+* React components ([HOC and dumb](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750))
+* Implementation of Flux architecture — [Redux](http://gaearon.github.io/redux/)
+* Immutable state — [Immutable.js](https://facebook.github.io/immutable-js/)
+* Powerful router — [React-router](https://github.com/rackt/react-router/)
+* ES6/JSX — [Babel.js](http://babeljs.io/)
+* CSS preprocessor — [Stylus](https://learnboost.github.io/stylus/)
+* Build tool — [Webpack](http://webpack.github.io/)
+* Unit-tests — [Jest](https://facebook.github.io/jest/) and Mocha
+* CSS regression tests — [Gemini](https://github.com/gemini-testing/gemini)
+* transport — ?
+* l10n — ?
+
 ## Relevant links
 
-### Stores
+### Flux
 
 * [Declarative data fetching in React components with Baobab](https://medium.com/@mistadikay/declarative-data-fetching-in-react-components-with-baobab-e43184c43852)
+* [Super minimal React + Redux app](https://gist.github.com/gaearon/074b0905337a6a835d82)
 
 ### Testing
 
@@ -51,8 +75,3 @@ npm run build
 ### Assets
 
 * [Long-term caching of static assets with Webpack](https://medium.com/@okonetchnikov/long-term-caching-of-static-assets-with-webpack-1ecb139adb95)
-
-### Redux
-
-* [Super minimal React + Redux app](https://gist.github.com/gaearon/074b0905337a6a835d82)
-* [New redux documentation](http://gaearon.github.io/redux/)
