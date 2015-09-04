@@ -49,7 +49,7 @@ TODO
 * Immutable state — [Immutable.js](https://facebook.github.io/immutable-js/)
 * Powerful router — [React-router](https://github.com/rackt/react-router/)
 * ES6/JSX — [Babel.js](http://babeljs.io/)
-* CSS preprocessor — [Stylus](https://learnboost.github.io/stylus/)
+* CSS preprocessor — [PostCSS](https://github.com/postcss/postcss)
 * Build tool — [Webpack](http://webpack.github.io/)
 * Unit-tests — [Jest](https://facebook.github.io/jest/) and Mocha
 * CSS regression tests — [Gemini](https://github.com/gemini-testing/gemini)
