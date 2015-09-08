@@ -189,7 +189,36 @@
         "react/react-in-jsx-scope": 1,
         "react/require-extension": 1,
         "react/self-closing-comp": 1,
-        "react/sort-comp": 1,
+        "react/sort-comp": [1, {
+            "order": [
+                "lifecycle",
+                "everything-else",
+                "/^handle.+$/",
+                "/^render.+$/",
+                "render"
+            ],
+            "groups": {
+                lifecycle: [
+                    "displayName",
+                    "mixins",
+                    "propTypes",
+                    "contextTypes",
+                    "statics",
+                    "defaultProps",
+                    "constructor",
+                    "getDefaultProps",
+                    "getInitialState",
+                    "state",
+                    "componentWillMount",
+                    "componentDidMount",
+                    "componentWillReceiveProps",
+                    "shouldComponentUpdate",
+                    "componentWillUpdate",
+                    "componentDidUpdate",
+                    "componentWillUnmount"
+                ]
+            }
+        }],
         "react/wrap-multilines": 1
     },
     "globals": {
