@@ -7,6 +7,7 @@ Let's try
 ```
 git clone git@github.com:albburtsev/reaction.git
 cd reaction/
+npm install
 npm start
 ```
 

@@ -1,24 +1,21 @@
 import './app.styl';
 
-import routes from 'routes';
-import Router, {Route, DefaultRoute} from 'react-router';
+import {ROUTE_ENTRY} from 'routes';
+import {Router, Route, Redirect} from 'react-router';
+import {history} from 'react-router/lib/BrowserHistory';
 
 import Root from 'components/Root/Root.jsx';
 import PageEntry from 'components/PageEntry/PageEntry.jsx';
 
-let config = (
-    <Route handler={Root}>
-        <DefaultRoute name={routes.ROUTE_ENTRY} handler={PageEntry} />
-    </Route>
-);
-
 // @todo: use another container instead of document.body
 let rootElement = document.body;
 
-// Run our application with support of HTML5 History API
-Router.run(config, Router.HistoryLocation, function (Handler/* , state*/) {
-    React.render(<Handler />, rootElement, () => {
-        // Put your redirects here
-        // console.info(this.getCurrentPath());
-    });
-});
+React.render((
+    <Router history={history}>
+        {/* @todo: waiting for IndexRoute: https://github.com/rackt/react-router/issues/1730#issuecomment-138986032 */}
+        <Redirect from="/" to={ROUTE_ENTRY} />
+        <Route path="/" component={Root}>
+            <Route path={ROUTE_ENTRY} component={PageEntry} />
+        </Route>
+    </Router>
+), rootElement);

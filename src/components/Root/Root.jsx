@@ -1,17 +1,16 @@
-import React from 'react';
-import {RouteHandler} from 'react-router';
+import {Component} from 'react';
 
 /**
  * Wrapper component for all pages
  */
-let Root = React.createClass({
+class Root extends Component {
     render() {
         return (
             <div className="root">
-                <RouteHandler {...this.props} />
+                {this.props.children}
             </div>
         );
     }
-});
+}
 
 export default Root;
