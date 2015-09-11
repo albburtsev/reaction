@@ -28,7 +28,7 @@ class LeafletMap extends Component {
 
             // Create map
             this.map = Leaflet
-                .map(container.getDOMNode())
+                .map(container)
                 .setView([lat, lon], zoom)
                 .addLayer(layer);
         });

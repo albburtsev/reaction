@@ -7,10 +7,9 @@ import {history} from 'react-router/lib/BrowserHistory';
 import Root from 'components/Root/Root.jsx';
 import PageEntry from 'components/PageEntry/PageEntry.jsx';
 
-// @todo: use another container instead of document.body
-let rootElement = document.body;
+let rootElement = document.querySelector('.app');
 
-React.render((
+ReactDOM.render((
     <Router history={history}>
         {/* @todo: waiting for IndexRoute: https://github.com/rackt/react-router/issues/1730#issuecomment-138986032 */}
         <Redirect from="/" to={ROUTE_ENTRY} />

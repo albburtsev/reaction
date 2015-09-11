@@ -26,6 +26,7 @@ var entryApp = [path.join(sourcePath, 'app.js')],
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
         new webpack.ProvidePlugin({
             React: 'react',
+            ReactDOM: 'react-dom',
             block: 'bem-cn'
         })
     ],
@@ -84,7 +85,11 @@ if (isDevelopment) {
 module.exports = {
     entry: {
         app: entryApp,
-        vendors: ['react']
+        vendors: [
+            'react',
+            'react-dom',
+            'react-router'
+        ]
     },
     resolve: {
         root: [sourcePath]

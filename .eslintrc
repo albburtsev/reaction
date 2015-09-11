@@ -223,6 +223,7 @@
     },
     "globals": {
         "React": false,
+        "ReactDOM": false,
         "block": false
     }
 }
