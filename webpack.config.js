@@ -30,7 +30,6 @@ var entryApp = [path.join(sourcePath, 'app.js')],
             block: 'bem-cn'
         })
     ],
-    jsLoaders = ['babel-loader'],
     stylusLoader = 'style-loader!css-loader!stylus-loader';
 
 /*
@@ -39,16 +38,13 @@ var entryApp = [path.join(sourcePath, 'app.js')],
  */
 if (isDevelopment) {
     entryApp = [
-        'webpack-dev-server/client?http://0.0.0.0:3000',
-        'webpack/hot/only-dev-server',
+        'webpack-hot-middleware/client'
     ].concat(entryApp);
 
     plugins = plugins.concat([
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ]);
-
-    jsLoaders.unshift('react-hot');
 
 /*
  * Production build:
@@ -113,7 +109,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: nodePath,
-                loaders: jsLoaders
+                loaders: ['babel']
             },
             {
                 test: /\.styl$/,

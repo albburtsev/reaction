@@ -11,6 +11,7 @@
     "plugins": [
         "react"
     ],
+    "parser": "babel-eslint",
     "rules": {
         "strict": 2,
         "comma-dangle": 1,

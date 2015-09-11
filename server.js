@@ -1,11 +1,16 @@
-var chalk = require('chalk'),
+var path = require('path'),
+    chalk = require('chalk'),
+    express = require('express'),
     webpack = require('webpack'),
     notifier = require('node-notifier'),
-    DevServer = require('webpack-dev-server'),
     config = require('./webpack.config'),
-    builder = webpack(config);
+    devMiddleware = require('webpack-dev-middleware'),
+    hotMiddleware = require('webpack-hot-middleware'),
 
-builder.plugin('done', function (stats) {
+    compiler = webpack(config),
+    app = express();
+
+compiler.plugin('done', function(stats) {
     var icon,
         title,
         message,
@@ -44,17 +49,21 @@ builder.plugin('done', function (stats) {
     }
 });
 
-var server = new DevServer(builder, {
-    hot: true,
+app.use(devMiddleware(compiler, {
     noInfo: true,
-    publicPath: config.output.publicPath,
-    historyApiFallback: true
+    publicPath: config.output.publicPath
+}));
+
+app.use(hotMiddleware(compiler));
+
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-server.listen(3000, 'localhost', function(err, result) {
+app.listen(3000, 'localhost', function(err) {
     if (err) {
-        console.log(err);
+        return console.error(err);
     }
 
-    console.log('Listening at localhost:3000');
+    console.log('Listening at http://0.0.0.0:3000/');
 });

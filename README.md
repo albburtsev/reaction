@@ -11,7 +11,7 @@ npm install
 npm start
 ```
 
-Then open [localhost:3000](http://localhost:3000/) in your browser and try to edit any component.
+Then open [0.0.0.0:3000](http://0.0.0.0:3000/) in your browser and try to edit any component.
 
 Do you want to run production build? Just run:
 
@@ -20,6 +20,12 @@ npm run build
 ```
 
 Now all minified and optimized assets you can find in ```/build``` directory.
+
+Do you want to check code style only?
+
+```
+npm run lint # presto!
+```
 
 ## Components
 
