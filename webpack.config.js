@@ -30,7 +30,7 @@ var entryApp = [path.join(sourcePath, 'app.js')],
             block: 'bem-cn'
         })
     ],
-    stylusLoader = 'style-loader!css-loader!stylus-loader';
+    stylusLoader = 'style!css!stylus';
 
 /*
  * Development build:
@@ -75,7 +75,7 @@ if (isDevelopment) {
         new webpack.BannerPlugin(banner)
     ]);
 
-    stylusLoader = ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader');
+    stylusLoader = ExtractTextPlugin.extract('style', 'css!stylus');
 }
 
 module.exports = {
@@ -104,7 +104,7 @@ module.exports = {
         preLoaders: [
             {
                 test: /\.(js|jsx)$/,
-                loader: 'eslint-loader'
+                loader: 'eslint'
             }
         ],
         loaders: [
@@ -123,7 +123,7 @@ module.exports = {
             },
             {
                 test: /\.png$/,
-                loader: 'file-loader'
+                loader: 'file'
             }
         ]
     },
