@@ -4,6 +4,7 @@ var path = require('path'),
     webpack = require('webpack'),
     notifier = require('node-notifier'),
     config = require('./webpack.config'),
+    exec = require('child_process').exec,
     devMiddleware = require('webpack-dev-middleware'),
     hotMiddleware = require('webpack-hot-middleware'),
 
@@ -65,5 +66,6 @@ app.listen(3000, 'localhost', function(err) {
         return console.error(err);
     }
 
+    exec('open http://0.0.0.0:3000/');
     console.log('Listening at http://0.0.0.0:3000/');
 });

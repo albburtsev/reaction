@@ -172,11 +172,11 @@
         "max-params": [2, 4],
         "no-bitwise": 2,
 
+        "jsx-quotes": [2, "prefer-double"],
         "react/display-name": 0,
         "react/jsx-boolean-value": 1,
         "react/jsx-curly-spacing": [1, "never"],
         "react/jsx-no-undef": 1,
-        "react/jsx-quotes": [1, "double"],
         "react/jsx-sort-prop-types": 0,
         "react/jsx-sort-props": 0,
         "react/jsx-uses-react": 1,
