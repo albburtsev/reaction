@@ -127,5 +127,6 @@ module.exports = {
             }
         ]
     },
-    plugins: plugins
+    plugins: plugins,
+    devtool: 'cheap-source-map'
 };
