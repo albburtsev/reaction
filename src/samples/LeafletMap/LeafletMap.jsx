@@ -7,6 +7,20 @@ import {Component, PropTypes} from 'react';
  * Component LeafletMap
  */
 class LeafletMap extends Component {
+    static propTypes = {
+        lon: PropTypes.number,
+        lat: PropTypes.number,
+        zoom: PropTypes.number,
+        tileURL: PropTypes.string
+    }
+
+    static defaultProps = {
+        lon: 37.620393,
+        lat: 55.75396,
+        zoom: 10,
+        tileURL: 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png'
+    }
+
     componentDidMount() {
         this.createMap();
     }
@@ -42,19 +56,5 @@ class LeafletMap extends Component {
         );
     }
 }
-
-LeafletMap.propTypes = {
-    lon: PropTypes.number,
-    lat: PropTypes.number,
-    zoom: PropTypes.number,
-    tileURL: PropTypes.string
-};
-
-LeafletMap.defaultProps = {
-    lon: 37.620393,
-    lat: 55.75396,
-    zoom: 10,
-    tileURL: 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png'
-};
 
 export default LeafletMap;
