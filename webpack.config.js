@@ -23,7 +23,9 @@ var _ = require('lodash'),
 
 var entryApp = [path.join(sourcePath, 'app.js')],
     plugins = [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendors'
+        }),
         new webpack.ProvidePlugin({
             React: 'react',
             ReactDOM: 'react-dom',
@@ -55,7 +57,6 @@ if (isDevelopment) {
  */
 } else {
     plugins = plugins.concat([
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
@@ -98,7 +99,7 @@ module.exports = {
     output: {
         path: buildPath,
         publicPath: '/build/',
-        filename: 'app.bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         preLoaders: [
