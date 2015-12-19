@@ -28,7 +28,8 @@ var entryApp = [path.join(sourcePath, 'app.js')],
             React: 'react',
             ReactDOM: 'react-dom',
             block: 'bem-cn'
-        })
+        }),
+        new webpack.NoErrorsPlugin()
     ],
     stylusLoader = 'style!css!stylus';
 
@@ -42,8 +43,7 @@ if (isDevelopment) {
     ].concat(entryApp);
 
     plugins = plugins.concat([
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.HotModuleReplacementPlugin()
     ]);
 
 /*
