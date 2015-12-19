@@ -11,6 +11,7 @@
     "start": "node server.js",
     "lint": "eslint src/ --ext .js --ext .jsx",
     "build": "NODE_ENV=production webpack",
+    "build-info": "NODE_ENV=production webpack --colors --display-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
