@@ -1,0 +1,5 @@
+--compilers js:babel-core/register
+--require mochasetup
+--reporter dot
+--slow 20
+--growl

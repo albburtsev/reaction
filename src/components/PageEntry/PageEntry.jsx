@@ -1,7 +1,7 @@
 let b = block('page-entry');
 
 import './PageEntry.styl';
-import {Component, PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 import LeafletMap from 'samples/LeafletMap/LeafletMap.jsx';
 

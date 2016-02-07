@@ -1,7 +1,7 @@
 let b = block('leaflet-map');
 
 import './LeafletMap.styl';
-import {Component, PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 /**
  * Component LeafletMap
