@@ -1,7 +1,7 @@
 describe('Greeting', () => {
     it('should be said', () => {
         const hello = sinon.spy(
-            () => console.log('Hello world!')
+            () => true // console.log('Hello world!')
         );
 
         // Say hello!

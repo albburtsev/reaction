@@ -12,7 +12,8 @@
     "lint": "eslint src/ test/ --ext .js --ext .jsx",
     "build": "NODE_ENV=production webpack",
     "build-info": "NODE_ENV=production webpack --colors --display-modules",
-    "test": "npm run lint && mocha test"
+    "mocha": "mocha --watch",
+    "test": "npm run lint && mocha test --reporter nyan"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,8 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-router": "^1.0.2"
+    "react-router": "^1.0.2",
+    "redux": "^3.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.3.21",
