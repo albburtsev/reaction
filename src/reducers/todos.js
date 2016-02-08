@@ -1,3 +1,5 @@
+import {combineReducers} from 'redux';
+
 export const ACTION_TODO_ADD = 'TODO_ADD';
 export const ACTION_TODO_COMPLETE = 'TODO_COMPLETE';
 
@@ -36,11 +38,11 @@ const todos = (state, action = {}) => {
     switch (action.type) {
         case ACTION_TODO_ADD:
             let lastID = state.lastID + 1,
-                action = Object.assign({}, action, {id: lastID});
+                extendedAction = Object.assign({}, action, {id: lastID});
 
             return {
                 lastID,
-                list: [...state.list, todo(undefined, action)]
+                list: [...state.list, todo(undefined, extendedAction)]
             };
 
         case ACTION_TODO_COMPLETE:
@@ -57,17 +59,4 @@ const todos = (state, action = {}) => {
     }
 };
 
-/**
- * @param {Object} state
- * @param {Object} action
- */
-const app = (state = {}, action) => {
-    return {
-        todos: todos(
-            state.todos,
-            action
-        )
-    };
-};
-
-export default app;
+export default combineReducers({todos});
