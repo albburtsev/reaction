@@ -12,14 +12,14 @@ class LeafletMap extends Component {
         lat: PropTypes.number,
         zoom: PropTypes.number,
         tileURL: PropTypes.string
-    }
+    };
 
     static defaultProps = {
         lon: 37.620393,
         lat: 55.75396,
         zoom: 10,
         tileURL: 'http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png'
-    }
+    };
 
     componentDidMount() {
         this.createMap();

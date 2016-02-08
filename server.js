@@ -38,7 +38,7 @@ compiler.plugin('done', function(stats) {
         message = message.trim().split('\n');
 
         var fileName = resource.replace(/^.*\//g, ''),
-            errorMessage = message[1].replace(/ +/g, ' '),
+            errorMessage = (message[1] || message[0]).replace(/ +/g, ' '),
             errorStat = message.pop();
 
         notifier.notify({

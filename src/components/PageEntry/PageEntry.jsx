@@ -11,7 +11,7 @@ import LeafletMap from 'samples/LeafletMap/LeafletMap.jsx';
 class PageEntry extends Component {
     static propTypes = {
         history: PropTypes.object
-    }
+    };
 
     render() {
         return (
