@@ -28,23 +28,32 @@ const todo = (state, {id, type, title} = {}) => {
 };
 
 /**
- * @param {Array} state
+ * @param {Object} state
  * @param {Object} action
  * @param {String} action.type
  */
-const todos = (state = [], action = {}) => {
+const todos = (state, action = {}) => {
     switch (action.type) {
         case ACTION_TODO_ADD:
-            return [
-                ...state,
-                todo(undefined, action)
-            ];
+            let lastID = state.lastID + 1,
+                action = Object.assign({}, action, {id: lastID});
+
+            return {
+                lastID,
+                list: [...state.list, todo(undefined, action)]
+            };
 
         case ACTION_TODO_COMPLETE:
-            return state.map((item) => todo(item, action));
+            return {
+                lastID: state.lastID,
+                list: state.list.map(item => todo(item, action))
+            };
 
         default:
-            return state;
+            return {
+                lastID: 0,
+                list: []
+            };
     }
 };
 
