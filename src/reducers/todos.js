@@ -18,10 +18,9 @@ const todo = (state, {id, type, title} = {}) => {
             };
 
         case ACTION_TODO_COMPLETE:
-            if (id === state.id) {
-                return Object.assign(state, {completed: true});
-            }
-            return state;
+            return id === state.id
+                ? Object.assign(state, {completed: true})
+                : state;
 
         default:
             return state;
@@ -42,11 +41,24 @@ const todos = (state = [], action = {}) => {
             ];
 
         case ACTION_TODO_COMPLETE:
-            return state.map((item) => todo(item, action))
+            return state.map((item) => todo(item, action));
 
         default:
             return state;
     }
 };
 
-export default todos;
+/**
+ * @param {Object} state
+ * @param {Object} action
+ */
+const app = (state = {}, action) => {
+    return {
+        todos: todos(
+            state.todos,
+            action
+        )
+    };
+};
+
+export default app;
