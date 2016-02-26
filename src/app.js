@@ -1,4 +1,4 @@
-import './app.styl';
+import 'styl/app.styl';
 
 import {createHistory} from 'history';
 import {Router, Route, IndexRoute} from 'react-router';

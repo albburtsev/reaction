@@ -1,16 +1,13 @@
-import React, {Component} from 'react';
+let b = block('root');
+
+import './Root.styl';
+import React from 'react';
 
 /**
- * Wrapper component for all pages
+ * Top-level container
  */
-class Root extends Component {
-    render() {
-        return (
-            <div className="root">
-                {this.props.children}
-            </div>
-        );
-    }
-}
+const Root = ({children}) =>
+    <div className={b}>{children}</div>
+;
 
 export default Root;

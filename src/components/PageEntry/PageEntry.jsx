@@ -1,26 +1,16 @@
 let b = block('page-entry');
 
 import './PageEntry.styl';
-import React, {Component, PropTypes} from 'react';
-
-import LeafletMap from 'samples/LeafletMap/LeafletMap.jsx';
+import React from 'react';
 
 /**
- * Entry point of our application
+ * Entry page
  */
-class PageEntry extends Component {
-    static propTypes = {
-        history: PropTypes.object
-    };
-
-    render() {
-        return (
-            <div className={b}>
-                <h1 className={b('title')}>Entry page</h1>
-                <LeafletMap />
-            </div>
-        );
-    }
-}
+const PageEntry = () =>
+    <div className={b}>
+        <h1 className={b('title')}>Reaction</h1>
+        <span className={b('addition')}>in action</span>
+    </div>
+;
 
 export default PageEntry;
