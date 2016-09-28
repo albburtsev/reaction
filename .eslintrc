@@ -36,7 +36,6 @@
         "no-negated-in-lhs": 2,
         "no-obj-calls": 2,
         "no-regex-spaces": 2,
-        "quote-props": 1,
         "no-sparse-arrays": 2,
         "no-unreachable": 2,
         "use-isnan": 2,
@@ -151,7 +150,7 @@
         }],
         "semi": 2,
         "sort-vars": 0,
-        "space-after-keywords": [1, "always"],
+        "keyword-spacing": ["error", {"after": true}],
         "space-before-blocks": [1, "always"],
         "space-before-function-paren": [1, {
             "anonymous": "always",
@@ -159,7 +158,6 @@
         }],
         "space-in-parens": [1, "never"],
         "space-infix-ops": 1,
-        "space-return-throw-case": 1,
         "spaced-comment": [1, "always"],
         "wrap-regex": 2,
 
@@ -188,7 +186,6 @@
         "react/no-unknown-property": 1,
         "react/prop-types": 0,
         "react/react-in-jsx-scope": 1,
-        "react/require-extension": 1,
         "react/self-closing-comp": 1,
         "react/sort-comp": [1, {
             "order": [
@@ -220,7 +217,7 @@
                 ]
             }
         }],
-        "react/wrap-multilines": 1
+        "react/jsx-wrap-multilines": 1
     },
     "globals": {
         "block": false,
