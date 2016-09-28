@@ -28,12 +28,11 @@ var entryApp = [path.join(sourcePath, 'app.js')],
         }),
         new webpack.ProvidePlugin({
             React: 'react',
-            ReactDOM: 'react-dom',
-            block: 'bem-cn'
+            ReactDOM: 'react-dom'
         }),
         new webpack.NoErrorsPlugin()
     ],
-    stylusLoader = 'style!css!stylus';
+    stylusLoader = 'style!css?localIdentName=[name]__[local]__[hash:base64:5]&modules!stylus';
 
 /*
  * Development build:
@@ -76,7 +75,10 @@ if (isDevelopment) {
         new webpack.BannerPlugin(banner)
     ]);
 
-    stylusLoader = ExtractTextPlugin.extract('style', 'css!stylus');
+    stylusLoader = ExtractTextPlugin.extract(
+        'style',
+        'css?localIdentName=[name]__[local]__[hash:base64:5]&modules!stylus'
+    );
 }
 
 module.exports = {
@@ -85,9 +87,7 @@ module.exports = {
         vendors: [
             'react',
             'react-dom',
-            'react-router',
-            'history',
-            'bem-cn'
+            'react-router'
         ]
     },
     resolve: {
@@ -115,12 +115,12 @@ module.exports = {
                 loaders: ['babel']
             },
             {
-                test: /\.styl$/,
-                loader: stylusLoader
-            },
-            {
                 test: /\.css$/,
                 loaders: ['style', 'css']
+            },
+            {
+                test: /\.styl$/,
+                loader: stylusLoader
             },
             {
                 test: /\.png$/,

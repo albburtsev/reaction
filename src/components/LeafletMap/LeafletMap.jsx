@@ -1,6 +1,4 @@
-let b = block('leaflet-map');
-
-import './LeafletMap.styl';
+import styles from './LeafletMap.styl';
 import React, {Component, PropTypes} from 'react';
 
 /**
@@ -50,8 +48,8 @@ class LeafletMap extends Component {
 
     render() {
         return (
-            <div className={b}>
-                <div ref="container" className={b('container')} />
+            <div className={styles.map}>
+                <div ref="container" className={styles.container} />
             </div>
         );
     }

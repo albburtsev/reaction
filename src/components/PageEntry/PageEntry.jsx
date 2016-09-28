@@ -1,15 +1,13 @@
-let b = block('page-entry');
-
-import './PageEntry.styl';
+import styles from './PageEntry.styl';
 import React from 'react';
 
 /**
  * Entry page
  */
 const PageEntry = () =>
-    <div className={b}>
-        <h1 className={b('title')}>Reaction</h1>
-        <span className={b('addition')}>in action</span>
+    <div className={styles.page}>
+        <h1 className={styles.title}>Reaction</h1>
+        <span className={styles.addition}>in action</span>
     </div>
 ;
 
