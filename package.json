@@ -10,8 +10,8 @@
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src/ test/ --ext .js --ext .jsx",
-    "build": "NODE_ENV=production webpack",
-    "build-info": "NODE_ENV=production webpack --colors --display-modules",
+    "build": "NODE_ENV=production webpack --config=webpack.config.prod.js",
+    "build-info": "NODE_ENV=production webpack --colors --display-modules --config=webpack.config.prod.js",
     "mocha": "mocha --watch",
     "test": "npm run lint && mocha test --reporter nyan"
   },
@@ -75,6 +75,7 @@
     "typescript": "^2.0.3",
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack-hot-middleware": "^2.6.0",
+    "webpack-merge": "^0.15.0"
   }
 }

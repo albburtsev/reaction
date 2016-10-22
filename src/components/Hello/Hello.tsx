@@ -2,17 +2,16 @@ import * as React from 'react';
 
 export interface HelloProps {
     compiler: string;
-    framework: string;
     className: string;
 }
 
 class Hello extends React.PureComponent<HelloProps, {}> {
     render() {
-        const {compiler, framework, className} = this.props;
+        const {compiler, className} = this.props;
 
         return (
             <footer className={className}>
-                Btw, hello from {compiler} and {framework}!
+                Btw, hello from {compiler}!
             </footer>
         );
     }

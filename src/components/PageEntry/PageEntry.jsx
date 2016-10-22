@@ -10,7 +10,7 @@ const PageEntry = () =>
     <div className={styles.page}>
         <h1 className={styles.title}>Reaction</h1>
         <p className={styles.addition}>in action</p>
-        <Hello className={123} compiler="TypeScript" framework="React" />
+        <Hello className={styles.addition} compiler="TypeScript" />
     </div>
 ;
 
