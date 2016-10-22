@@ -21,7 +21,7 @@ var _ = require('lodash'),
 // @todo: debug-mode
 // @todo: stage=0 and static properties for default props and prop types
 
-var entryApp = [path.join(sourcePath, 'app.js')],
+var entryApp = [path.join(sourcePath, 'app.tsx')],
     plugins = [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors'
@@ -91,7 +91,8 @@ module.exports = {
         ]
     },
     resolve: {
-        root: [sourcePath]
+        root: [sourcePath],
+        extensions: ['', '.ts', '.tsx', '.js', '.jsx']
     },
     resolveLoader: {
         root: [nodePath]
@@ -106,9 +107,17 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'eslint'
+            },
+            {
+                test: /\.js$/,
+                loader: 'source-map-loader'
             }
         ],
         loaders: [
+            {
+                test: /\.(ts|tsx)?$/,
+                loader: 'ts'
+            },
             {
                 test: /\.(js|jsx)$/,
                 exclude: nodePath,
@@ -136,5 +145,5 @@ module.exports = {
         ]
     },
     plugins: plugins,
-    devtool: 'cheap-source-map'
+    devtool: 'source-map'
 };
