@@ -21,7 +21,7 @@ var _ = require('lodash'),
 // @todo: debug-mode
 // @todo: stage=0 and static properties for default props and prop types
 
-var entryApp = [path.join(sourcePath, 'app.tsx')],
+var entryApp = [path.join(sourcePath, 'app.js')],
     plugins = [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors'

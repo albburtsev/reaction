@@ -1,9 +1,21 @@
-import * as React from "react";
+import * as React from 'react';
 
-export interface HelloProps { compiler: string; framework: string; }
+export interface HelloProps {
+    compiler: string;
+    framework: string;
+    className: string;
+}
 
-export class Hello extends React.Component<HelloProps, {}> {
+class Hello extends React.PureComponent<HelloProps, {}> {
     render() {
-        return <h1>Hellooooo from {this.props.compiler} and {this.props.framework}!</h1>;
+        const {compiler, framework, className} = this.props;
+
+        return (
+            <footer className={className}>
+                Btw, hello from {compiler} and {framework}!
+            </footer>
+        );
     }
 }
+
+export default Hello;
