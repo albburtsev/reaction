@@ -91,7 +91,8 @@ module.exports = {
         ]
     },
     resolve: {
-        root: [sourcePath]
+        root: [sourcePath],
+        extensions: ['', '.ts', '.tsx', '.js', '.jsx']
     },
     resolveLoader: {
         root: [nodePath]
@@ -106,9 +107,17 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'eslint'
+            },
+            {
+                test: /\.js$/,
+                loader: 'source-map-loader'
             }
         ],
         loaders: [
+            {
+                test: /\.(ts|tsx)?$/,
+                loader: 'ts'
+            },
             {
                 test: /\.(js|jsx)$/,
                 exclude: nodePath,
@@ -136,5 +145,5 @@ module.exports = {
         ]
     },
     plugins: plugins,
-    devtool: 'cheap-source-map'
+    devtool: 'source-map'
 };
