@@ -1,19 +1,23 @@
 import 'styl/app.styl';
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
-import React from 'react';
-import ReactDOM from 'react/lib/ReactDOM';
+import store from 'store';
 import Root from 'components/Root/Root.jsx';
-import PageEntry from 'components/PageEntry/PageEntry.jsx';
+import PageEntryContainer from 'components/PageEntry/PageEntryContainer';
 
 let rootElement = document.querySelector('.app'),
     basePath = global.basePath || '/';
 
 ReactDOM.render((
-    <Router history={browserHistory}>
-        <Route path={basePath} component={Root}>
-            <IndexRoute component={PageEntry} />
-        </Route>
-    </Router>
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path={basePath} component={Root}>
+                <IndexRoute component={PageEntryContainer} />
+            </Route>
+        </Router>
+    </Provider>
 ), rootElement);

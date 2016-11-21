@@ -4,10 +4,14 @@
     min-height: 100%
     text-align: center
 
-.title
+.name
     font_size_display()
     color_text_primary()
 
-.addition
+    &::first-letter
+        text-transform: uppercase
+
+.description
     font_size_regular()
     color_light_primary()
+    margin: 1rem 0 0
