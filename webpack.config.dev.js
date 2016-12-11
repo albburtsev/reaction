@@ -8,7 +8,9 @@ let webpack = require('webpack'),
  */
 module.exports = merge(commonConfig, {
     entry: {
-        app: ['webpack-hot-middleware/client']
+        app: [
+            require.resolve('react-dev-utils/webpackHotDevClient')
+        ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
