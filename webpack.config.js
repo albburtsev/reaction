@@ -66,7 +66,6 @@ module.exports = {
     },
     stylus: {
         import: [
-            '~styl/flexbox.styl',
             '~styl/palette.styl',
             '~styl/typography.styl'
         ]

@@ -29,8 +29,9 @@ function setupCompiler(host, port, protocol) {
     compiler
         .plugin('invalid', function() {
             console.log('Compiling...');
-        })
-        .plugin('done', function(stats) {
+        });
+
+    compiler.plugin('done', function(stats) {
             var messages = formatWebpackMessages(stats.toJson({}, true));
             var isSuccessful = !messages.errors.length && !messages.warnings.length;
             var showInstructions = isSuccessful && isFirstCompile;

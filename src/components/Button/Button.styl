@@ -1,0 +1,26 @@
+$flat_button_focused = alpha(#999, .2)
+// $flat_button_pressed = alpha(#999, .4)
+
+.button
+    color_primary_text()
+    display: inline-block
+    min-width: 4rem
+    padding: 0
+    margin: 0 .5rem
+    border: 0
+    border-radius: .125rem
+    outline: 0
+    font: .875rem Roboto, sans-serif
+    text-transform: uppercase
+    background: white
+    cursor: pointer
+    text-decoration: none
+
+.content
+    display: inline-block
+    height: 2.25rem
+    padding: 0 1rem
+    line-height: 2.25rem
+
+    &:hover
+        background: $flat_button_focused
