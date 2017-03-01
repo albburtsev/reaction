@@ -66,6 +66,7 @@ module.exports = {
     },
     stylus: {
         import: [
+            '~styl/layout.styl',
             '~styl/palette.styl',
             '~styl/typography.styl'
         ]

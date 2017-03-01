@@ -9,14 +9,12 @@ import Button, {BUTTON_TYPE_LINK} from 'components/Button/Button.jsx';
  */
 const PageEntry = ({name, description, version}) =>
     <div className={styles.page}>
-        <div className={styles.content}>
-            <h1 className={styles.name}>{name}, v{version}</h1>
-            <p className={styles.description}>{description}</p>
-            <Hello className={styles.description} compiler="TypeScript" />
-            <div>
-                <Button type={BUTTON_TYPE_LINK} to="/signin">Sign in</Button>
-                <Button type={BUTTON_TYPE_LINK} to="/signup">Sign up</Button>
-            </div>
+        <h1 className={styles.name}>{name}, v{version}</h1>
+        <p className={styles.description}>{description}</p>
+        <Hello className={styles.description} compiler="TypeScript" />
+        <div>
+            <Button type={BUTTON_TYPE_LINK} to="/signin">Sign in</Button>
+            <Button type={BUTTON_TYPE_LINK} to="/signup">Sign up</Button>
         </div>
     </div>
 ;
