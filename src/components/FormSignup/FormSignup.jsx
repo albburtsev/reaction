@@ -4,7 +4,7 @@ import React from 'react';
 import {PATH_SIGNIN} from 'paths';
 
 import {Link} from 'react-router';
-import Button from 'components/Button/Button.jsx';
+import Button from 'components/Button/Button';
 
 const FormSignup = () =>
     <form>

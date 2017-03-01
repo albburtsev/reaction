@@ -8,16 +8,16 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import store from 'store';
 import * as paths from 'paths';
 
-import FormSignin from 'components/FormSignin/FormSignin.jsx';
-import FormSignup from 'components/FormSignup/FormSignup.jsx';
-import PageEntryContainer from 'components/PageEntry/PageEntryContainer';
+import PageEntry from 'components/PageEntry/PageEntry';
+import FormSignin from 'components/FormSignin/FormSignin';
+import FormSignup from 'components/FormSignup/FormSignup';
 
 let rootElement = document.querySelector('.app');
 
 ReactDOM.render((
     <Provider store={store}>
         <Router history={browserHistory}>
-            <Route path={paths.PATH_ENTRY} component={PageEntryContainer}>
+            <Route path={paths.PATH_ENTRY} component={PageEntry}>
                 <IndexRoute component={FormSignin} />
                 <Route path={paths.PATH_SIGNIN} component={FormSignin} />
                 <Route path={paths.PATH_SIGNUP} component={FormSignup} />

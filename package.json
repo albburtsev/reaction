@@ -1,7 +1,7 @@
 {
   "name": "reaction",
   "version": "0.0.0",
-  "description": "Full-blown React/Flux starter kit",
+  "description": "React/Redux/ReactRouter starter kit",
   "main": "index.js",
   "engines": {
     "node": ">=6.0.0",
