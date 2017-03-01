@@ -5,6 +5,7 @@ import React from 'react';
 const Button = ({children}) =>
     <button className={styles.button}>
         <span className={styles.content}>{children}</span>
-    </button>;
+    </button>
+;
 
 export default Button;
