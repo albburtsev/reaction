@@ -4,8 +4,8 @@ import {PATH_ENTRY} from 'paths';
 import React from 'react';
 
 import {Link} from 'react-router';
-import Logo from 'components/Logo/Logo';
-import FooterContainer from 'components/Footer/FooterContainer';
+import Logo from 'components/common/Logo/Logo';
+import FooterContainer from 'components/layout/Footer/FooterContainer';
 
 /**
  * Entry page

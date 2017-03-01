@@ -8,9 +8,9 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import store from 'store';
 import * as paths from 'paths';
 
-import PageEntry from 'components/PageEntry/PageEntry';
-import FormSignin from 'components/FormSignin/FormSignin';
-import FormSignup from 'components/FormSignup/FormSignup';
+import PageEntry from 'components/page/PageEntry/PageEntry';
+import FormSignin from 'components/layout/FormSignin/FormSignin';
+import FormSignup from 'components/layout/FormSignup/FormSignup';
 
 let rootElement = document.querySelector('.app');
 
