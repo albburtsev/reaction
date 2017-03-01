@@ -1,7 +1,7 @@
 import styles from './PageEntry.styl';
 
 import {PATH_ENTRY} from 'paths';
-import React, {PropTypes} from 'react';
+import React from 'react';
 
 import {Link} from 'react-router';
 import Logo from 'components/Logo/Logo';
@@ -21,11 +21,5 @@ const PageEntry = ({children}) =>
         <FooterContainer />
     </div>
 ;
-
-PageEntry.propTypes = {
-    name: PropTypes.string,
-    description: PropTypes.string,
-    version: PropTypes.string
-};
 
 export default PageEntry;

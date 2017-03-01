@@ -12,7 +12,6 @@ const Footer = ({description, version}) =>
 ;
 
 Footer.propTypes = {
-    name: PropTypes.string,
     description: PropTypes.string,
     version: PropTypes.string
 };
