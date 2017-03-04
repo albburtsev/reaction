@@ -1,25 +1,32 @@
-$flat_button_focused = alpha(#999, .2)
-// $flat_button_pressed = alpha(#999, .4)
+// @see https://material.io/guidelines/components/buttons.html
 
 .button
-    color_primary_text()
+    font_size_small()
     display: inline-block
-    min-width: 4rem
-    padding: 0
-    border: 0
-    border-radius: .125rem
-    outline: 0
-    font: .875rem Roboto, sans-serif
-    text-transform: uppercase
-    background: white
-    cursor: pointer
-    text-decoration: none
-
-.content
-    display: inline-block
+    min-width: 5.5rem
     height: 2.25rem
+    margin: .5rem 0
     padding: 0 1rem
     line-height: 2.25rem
+    border: 0
+    outline: 0
+    cursor: pointer
+    text-decoration: none
+    text-transform: uppercase
+    border-radius: .125rem
+    box-shadow: 0 3px 5px alpha(#000, .24)
+    transition: all .45s cubic-bezier(0.23, 1, 0.32, 1)
+
+.button_preset_default
+    color_primary_text()
+    background: white
+    
+    &:hover
+        background: #DDD
+
+.button_preset_accent
+    background_accent()
+    color: white
 
     &:hover
-        background: $flat_button_focused
+        background-color: lightness($accent_color, 45%)

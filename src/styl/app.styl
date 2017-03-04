@@ -1,6 +1,7 @@
 :global
     html, body
         background_dark_primary()
+        color_text_primary()
         font_size_regular()
         height: 100%
         margin: 0
@@ -11,6 +12,12 @@
     h1, h2, h3
         margin: 0
         padding: 0
+
+    a
+        color_text_primary()
+
+        &:hover
+            color_accent()
 
     *
         box-sizing: border-box
