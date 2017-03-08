@@ -12,8 +12,8 @@ const FormSignin = () =>
         <p className={styles.hint}>
             <Link to={PATH_SIGNUP}>Don't have an account? Sign up</Link>
         </p>
-        <Input type={INPUT_TYPE_EMAIL} name="login" required autoFocus />
-        <Input type={INPUT_TYPE_PASSWORD} name="password" required />
+        <Input required autoFocus type={INPUT_TYPE_EMAIL} name="login" placeholder="Email" />
+        <Input required type={INPUT_TYPE_PASSWORD} name="password" placeholder="Password" />
         <p className={styles.button}>
             <Button preset={BUTTON_PRESET_ACCENT}>Sign in</Button>
         </p>
