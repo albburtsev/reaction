@@ -5,7 +5,7 @@ import {PATH_SIGNIN} from 'paths';
 
 import {Link} from 'react-router';
 import Button, {BUTTON_PRESET_ACCENT} from 'components/common/Button/Button';
-import Input, {INPUT_TYPE_EMAIL, INPUT_TYPE_PASSWORD} from 'components/common/Input';
+import Input, {INPUT_TYPE_EMAIL, INPUT_TYPE_PASSWORD} from 'components/common/Input/Input';
 
 const FormSignup = () =>
     <form>
