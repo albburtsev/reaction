@@ -1,4 +1,4 @@
-let _ = require('lodash'),
+var _ = require('lodash'),
     path = require('path'),
     webpack = require('webpack'),
     rootPath = path.resolve(__dirname),
