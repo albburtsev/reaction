@@ -14,11 +14,11 @@ const FormSignin = ({form: {login, password}, onChange}) =>
         </p>
         <Input required
             autoFocus type={INPUT_TYPE_EMAIL} name="login" value={login} placeholder="Email"
-            onChange={({target: {value}}) => onChange('login', value)}
+            onChange={onChange}
         />
         <Input required
             type={INPUT_TYPE_PASSWORD} name="password" value={password} placeholder="Password"
-            onChange={({target: {value}}) => onChange('password', value)}
+            onChange={onChange}
         />
         <p className={styles.button}>
             <Button preset={BUTTON_PRESET_ACCENT}>Sign in</Button>

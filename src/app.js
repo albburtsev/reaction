@@ -9,8 +9,8 @@ import store from 'store';
 import * as paths from 'paths';
 
 import PageEntry from 'components/page/PageEntry/PageEntry';
-import FormSignup from 'components/layout/FormSignup/FormSignup';
-import FormSigninContainer from './components/layout/FormSignin/FormSigninContainer';
+import FormSignupContainer from 'components/layout/FormSignup/FormSignupContainer';
+import FormSigninContainer from 'components/layout/FormSignin/FormSigninContainer';
 
 let rootElement = document.querySelector('.app');
 
@@ -20,7 +20,7 @@ ReactDOM.render((
             <Route path={paths.PATH_ENTRY} component={PageEntry}>
                 <IndexRoute component={FormSigninContainer} />
                 <Route path={paths.PATH_SIGNIN} component={FormSigninContainer} />
-                <Route path={paths.PATH_SIGNUP} component={FormSignup} />
+                <Route path={paths.PATH_SIGNUP} component={FormSignupContainer} />
             </Route>
         </Router>
     </Provider>

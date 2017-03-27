@@ -1,11 +1,11 @@
 import {connect} from 'react-redux';
-import FormSignin from './FormSignin';
+import FormSignup from './FormSignup';
 
 import * as formsActions from 'ducks/formsDuck';
 
 export default connect(
-    ({forms: {signin}}) => ({
-        form: signin
+    ({forms: {signup}}) => ({
+        form: signup
     }),
     (dispatch) => ({
         /**
@@ -16,9 +16,9 @@ export default connect(
          * @param {String} e.target.value
          */
         onChange({target: {name, value}}) {
-            dispatch(formsActions.update(`signin.${name}`, value));
+            dispatch(formsActions.update(`signup.${name}`, value));
         }
     }),
     null,
     {pure: false} // @todo: waiting for immutable store
-)(FormSignin);
+)(FormSignup);

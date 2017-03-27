@@ -8,7 +8,9 @@ export default {
             password: ''
         },
         signup: {
-            // @todo
+            name: '',
+            login: '',
+            password: ''
         }
     }
 };
