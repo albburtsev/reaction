@@ -1,30 +1,36 @@
 // @see https://www.google.com/design/spec/style/typography.html
 
-$font_size_display_4 = 112px
-$font_size_display_3 = 56px
-$font_size_display_2 = 45px
-$font_size_display = 34px
 $font_size_headline = 24px
 $font_size_title = 20px
 $font_size_regular = 16px
+$font_size_small = 14px
+$font_size_dwarf = 12px
 
-font_size_display_4()
-    font-size: $font_size_display_4
+$font_weight_light = 300
+$font_weight_reqular = 400
+$font_weight_medium = 500
 
-font_size_display_3()
-    font-size: $font_size_display_3
+$font_family_default = Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
 
-font_size_display_2()
-    font-size: $font_size_display_2
-
-font_size_display()
-    font-size: $font_size_display
+// The rem unit doesn't supported by IE9 (and mobile IE10) for the font shorthand
+// @see http://stackoverflow.com/questions/16157342/css-rem-unit-not-working-with-font-declarations
+font-rem($size, $weight = $font_weight_reqular, $line_height = 1.4, $family = $font_family_default)
+    font-size: $size
+    font-weight: $weight
+    line-height: $line_height
+    font-family: $family
 
 font_size_headline()
-    font-size: $font_size_headline
+    font-rem($font_size_headline)
 
 font_size_title()
-    font-size: $font_size_title
+    font-rem($font_size_title, $font_weight_medium)
 
 font_size_regular()
-    font-size: $font_size_regular
+    font-rem($font_size_regular)
+
+font_size_small()
+    font-rem($font_size_small)
+
+font_size_dwarf()
+    font-rem($font_size_dwarf, $font_weight_light)

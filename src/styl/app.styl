@@ -1,24 +1,26 @@
 :global
     html, body
         background_dark_primary()
+        color_text_primary()
+        font_size_regular()
         height: 100%
         margin: 0
         padding: 0
-
-    html
-        font: 16px/1.4 Helvetica, Arial, sans-serif
 
     p,
     header,
     h1, h2, h3
         margin: 0
         padding: 0
-        font-weight: normal
+
+    a
+        color_text_primary()
+
+        &:hover
+            color_accent()
 
     *
         box-sizing: border-box
 
     .app
-        position: relative
-        min-height: 100%
         height: 100%

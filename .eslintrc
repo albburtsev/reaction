@@ -1,6 +1,7 @@
 {
     "env": {
         "browser": true,
+        "mocha": true,
         "es6": true,
         "node": true
     },
@@ -118,7 +119,7 @@
             "beforeColon": false,
             "afterColon": true
         }],
-        "lines-around-comment": 1,
+        "lines-around-comment": 0,
         "linebreak-style": [2, "unix"],
         "max-nested-callbacks": [2, 4],
         "new-cap": 2,
@@ -221,9 +222,7 @@
     },
     "globals": {
         "block": false,
-        "describe": false,
         "expect": false,
-        "sinon": false,
-        "it": false
+        "sinon": false
     }
 }

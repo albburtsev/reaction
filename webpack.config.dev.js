@@ -1,4 +1,4 @@
-let webpack = require('webpack'),
+var webpack = require('webpack'),
     merge = require('webpack-merge'),
     commonConfig = require('./webpack.config');
 

@@ -1,7 +1,7 @@
 {
   "name": "reaction",
   "version": "0.0.0",
-  "description": "Full-blown React/Flux starter kit",
+  "description": "React/Redux/ReactRouter starter kit",
   "main": "index.js",
   "engines": {
     "node": ">=6.0.0",
@@ -12,8 +12,8 @@
     "lint": "eslint src/ test/ --ext .js --ext .jsx",
     "build": "NODE_ENV=production webpack --config=webpack.config.prod.js",
     "build-info": "NODE_ENV=production webpack --colors --display-modules --config=webpack.config.prod.js",
-    "mocha": "mocha --watch",
-    "test": "npm run lint && mocha test --reporter nyan"
+    "mocha": "NODE_PATH=$NODE_PATH:$PWD/src mocha test --watch src/**/*.spec.js",
+    "test": "NODE_PATH=$NODE_PATH:$PWD/src mocha test src/**/*.spec.js && yarn run lint"
   },
   "repository": {
     "type": "git",
@@ -33,12 +33,15 @@
   "dependencies": {
     "@types/react": "^0.14.41",
     "@types/react-dom": "^0.14.18",
+    "classnames": "^2.2.5",
     "leaflet": "1.0.0-beta.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.6",
     "react-router": "^2.8.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.3.21",
