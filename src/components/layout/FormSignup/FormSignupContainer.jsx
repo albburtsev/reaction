@@ -16,7 +16,7 @@ export default connect(
          * @param {String} e.target.value
          */
         onChange({target: {name, value}}) {
-            dispatch(formsActions.update(`signup.${name}`, value));
+            dispatch(formsActions.update('signup', name, value));
         }
     }),
     null,
