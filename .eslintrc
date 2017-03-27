@@ -1,6 +1,7 @@
 {
     "env": {
         "browser": true,
+        "mocha": true,
         "es6": true,
         "node": true
     },
@@ -221,9 +222,7 @@
     },
     "globals": {
         "block": false,
-        "describe": false,
         "expect": false,
-        "sinon": false,
-        "it": false
+        "sinon": false
     }
 }
