@@ -1,5 +1,0 @@
---compilers js:babel-core/register
---require mochasetup
---reporter nyan
---slow 20
---growl

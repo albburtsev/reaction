@@ -12,8 +12,14 @@
     "lint": "eslint src/ test/ --ext .js --ext .jsx",
     "build": "NODE_ENV=production webpack --config=webpack.config.prod.js",
     "build-info": "NODE_ENV=production webpack --colors --display-modules --config=webpack.config.prod.js",
-    "mocha": "NODE_PATH=$NODE_PATH:$PWD/src mocha test --watch src/**/*.spec.js",
-    "test": "NODE_PATH=$NODE_PATH:$PWD/src mocha test src/**/*.spec.js && yarn run lint"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "modulePaths": [
+      "./src"
+    ]
   },
   "repository": {
     "type": "git",
@@ -33,6 +39,7 @@
   "dependencies": {
     "@types/react": "^0.14.41",
     "@types/react-dom": "^0.14.18",
+    "babel-jest": "^19.0.0",
     "classnames": "^2.2.5",
     "leaflet": "1.0.0-beta.1",
     "react": "^15.3.2",
@@ -53,7 +60,6 @@
     "babel-plugin-transform-object-rest-spread": "^6.6.4",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
-    "chai": "^3.5.0",
     "chalk": "^1.1.0",
     "connect-history-api-fallback": "^1.3.0",
     "css-loader": "^0.25.0",
@@ -64,11 +70,10 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "http-proxy-middleware": "^0.17.3",
+    "jest": "^19.0.2",
     "json-loader": "^0.5.4",
     "lodash": "^4.16.2",
-    "mocha": "^3.1.0",
     "react-dev-utils": "^0.4.1",
-    "sinon": "^1.17.3",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.0",
     "stylus": "^0.54.5",

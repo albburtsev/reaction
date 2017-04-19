@@ -9,19 +9,19 @@ describe('Forms store', () => {
         store = createStore();
     });
 
-    it('should have initial value', () => {
-        expect(store.getState().forms).to.deep.equal(schema.forms);
+    test('should have initial value', () => {
+        expect(store.getState().forms).toEqual(schema.forms);
     });
 
-    it('should update field values', () => {
+    test('should update field values', () => {
         const getFieldvalue = (form, name) =>
             store.getState().forms[form][name];
         const form = 'signin';
         const name = 'login';
         const value = 'Alex';
 
-        expect(getFieldvalue(form, name)).to.be.empty;
+        expect(getFieldvalue(form, name)).toBe('');
         store.dispatch(formsActions.update(form, name, value));
-        expect(getFieldvalue(form, name)).to.be.equal(value);
+        expect(getFieldvalue(form, name)).toBe(value);
     });
 });
