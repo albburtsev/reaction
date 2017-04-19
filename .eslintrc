@@ -1,9 +1,9 @@
 {
     "env": {
         "browser": true,
-        "mocha": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "ecmaFeatures": {
         "modules": true,
@@ -221,8 +221,6 @@
         "react/jsx-wrap-multilines": 1
     },
     "globals": {
-        "block": false,
-        "expect": false,
-        "sinon": false
+        "block": false
     }
 }
