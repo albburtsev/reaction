@@ -12,7 +12,12 @@
     "lint": "eslint src/ test/ --ext .js --ext .jsx",
     "build": "NODE_ENV=production webpack --config=webpack.config.prod.js",
     "build-info": "NODE_ENV=production webpack --colors --display-modules --config=webpack.config.prod.js",
-    "test": "NODE_PATH=$NODE_PATH:$PWD/src jest"
+    "test": "jest"
+  },
+  "jest": {
+    "modulePaths": [
+      "./src"
+    ]
   },
   "repository": {
     "type": "git",
@@ -32,6 +37,7 @@
   "dependencies": {
     "@types/react": "^0.14.41",
     "@types/react-dom": "^0.14.18",
+    "babel-jest": "^19.0.0",
     "classnames": "^2.2.5",
     "leaflet": "1.0.0-beta.1",
     "react": "^15.3.2",
