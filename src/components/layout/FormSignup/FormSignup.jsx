@@ -1,7 +1,8 @@
 import styles from './FormSignup.styl';
 
+import React from 'react';
 import {PATH_SIGNIN} from 'paths';
-import React, {PropTypes} from 'react';
+import PropTypes from 'prop-types';
 
 import {Link} from 'react-router-dom';
 import Button, {BUTTON_PRESET_ACCENT} from 'components/common/Button/Button';

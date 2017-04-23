@@ -1,7 +1,8 @@
 import styles from './Button.styl';
 
+import React from 'react';
 import cx from 'classnames';
-import React, {PropTypes} from 'react';
+import PropTypes from 'prop-types';
 
 export const BUTTON_PRESET_DEFAULT = 'default';
 export const BUTTON_PRESET_ACCENT = 'accent';

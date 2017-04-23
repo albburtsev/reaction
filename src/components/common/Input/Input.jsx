@@ -1,6 +1,7 @@
 import styles from './Input.styl';
 
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export const INPUT_TYPE_TEXT = 'text';
 export const INPUT_TYPE_EMAIL = 'email';
