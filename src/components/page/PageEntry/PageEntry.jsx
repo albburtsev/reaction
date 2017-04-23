@@ -1,22 +1,28 @@
 import styles from './PageEntry.styl';
 
-import {PATH_ENTRY} from 'paths';
 import React from 'react';
+import * as paths from 'paths';
 
-import {Link} from 'react-router';
 import Logo from 'components/common/Logo/Logo';
+import {Link, Route, Switch} from 'react-router-dom';
 import FooterContainer from 'components/layout/Footer/FooterContainer';
+import FormSignupContainer from 'components/layout/FormSignup/FormSignupContainer';
+import FormSigninContainer from 'components/layout/FormSignin/FormSigninContainer';
 
 /**
  * Entry page
  */
-const PageEntry = ({children}) =>
+const PageEntry = () =>
     <div className={styles.page}>
         <div className={styles.content}>
-            <Link className={styles.logo} to={PATH_ENTRY}>
+            <Link className={styles.logo} to={paths.PATH_ENTRY}>
                 <Logo />
             </Link>
-            {children}
+            <Switch>
+                <Route path={paths.PATH_SIGNIN} component={FormSigninContainer} />
+                <Route path={paths.PATH_SIGNUP} component={FormSignupContainer} />
+                <Route component={FormSigninContainer} />
+            </Switch>
         </div>
         <FooterContainer />
     </div>
