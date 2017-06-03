@@ -5,7 +5,7 @@ import {PATH_SIGNUP} from 'paths';
 import PropTypes from 'prop-types';
 
 import {Link} from 'react-router-dom';
-import Button, {BUTTON_PRESET_ACCENT} from 'components/common/Button/Button';
+import Button, {ButtonPreset} from 'components/common/Button/Button';
 import Input, {INPUT_TYPE_EMAIL, INPUT_TYPE_PASSWORD} from 'components/common/Input/Input';
 
 const FormSignin = ({form: {login, password}, onChange}) =>
@@ -22,7 +22,7 @@ const FormSignin = ({form: {login, password}, onChange}) =>
             onChange={onChange}
         />
         <p className={styles.button}>
-            <Button preset={BUTTON_PRESET_ACCENT}>Sign in</Button>
+            <Button preset={ButtonPreset.Accent}>Sign in</Button>
         </p>
     </form>
 ;

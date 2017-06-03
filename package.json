@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/albburtsev/reaction#readme",
   "dependencies": {
+    "@types/classnames": "^2.2.0",
     "@types/react": "^0.14.41",
     "@types/react-dom": "^0.14.18",
     "babel-jest": "^19.0.0",
@@ -81,6 +82,7 @@
     "stylus-loader": "^2.3.1",
     "ts-loader": "^0.9.5",
     "typescript": "^2.0.3",
+    "typings-for-css-modules-loader": "^1.5.0",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^0.15.0"
