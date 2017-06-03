@@ -5,8 +5,8 @@ import {PATH_SIGNUP} from 'paths';
 import PropTypes from 'prop-types';
 
 import {Link} from 'react-router-dom';
+import Input from 'components/common/Input/Input';
 import Button, {ButtonPreset} from 'components/common/Button/Button';
-import Input, {INPUT_TYPE_EMAIL, INPUT_TYPE_PASSWORD} from 'components/common/Input/Input';
 
 const FormSignin = ({form: {login, password}, onChange}) =>
     <form>
@@ -14,11 +14,11 @@ const FormSignin = ({form: {login, password}, onChange}) =>
             <Link to={PATH_SIGNUP}>Don't have an account? Sign up</Link>
         </p>
         <Input required
-            autoFocus type={INPUT_TYPE_EMAIL} name="login" value={login} placeholder="Email"
+            autoFocus type="email" name="login" value={login} placeholder="Email"
             onChange={onChange}
         />
         <Input required
-            type={INPUT_TYPE_PASSWORD} name="password" value={password} placeholder="Password"
+            type="password" name="password" value={password} placeholder="Password"
             onChange={onChange}
         />
         <p className={styles.button}>
