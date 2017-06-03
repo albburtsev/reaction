@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as cx from 'classnames';
 
-import * as styles from './Button.styl';
+import {button, presetDefault, presetAccent} from './Button.styl';
 
 export enum ButtonPreset {
-    Default = styles.presetDefault as any,
-    Accent = styles.presetAccent as any
+    Default = presetDefault as any,
+    Accent = presetAccent as any
 }
 
 export interface ButtonProps {
@@ -17,7 +17,7 @@ export default class Button extends React.Component<ButtonProps, any> {
         const {preset, children} = this.props;
 
         return (
-            <button className={cx(styles.button, preset)}>
+            <button className={cx(button, preset)}>
                 {children}
             </button>
         );
