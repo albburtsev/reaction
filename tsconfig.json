@@ -2,6 +2,9 @@
   "compilerOptions": {
     "outDir": "./build/",
     "baseUrl": ".",
+    "rootDirs": [
+      "src/"
+    ],
     "sourceMap": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,

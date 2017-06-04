@@ -1,11 +1,11 @@
 import * as styles from './FormSignup.styl';
 
 import * as React from 'react';
-import {PATH_SIGNIN} from '../../../paths';
+import {PATH_SIGNIN} from 'paths';
 
 import {Link} from 'react-router-dom';
-import Input from '../../common/Input/Input';
-import Button, {ButtonPreset} from '../../common/Button/Button';
+import Input from 'components/common/Input/Input';
+import Button, {ButtonPreset} from 'components/common/Button/Button';
 
 interface FormSignupProps {
     form: {
