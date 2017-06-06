@@ -1,13 +1,13 @@
-import styles from './PageEntry.styl';
+import * as styles from './PageEntry.styl';
 
-import React from 'react';
-import * as paths from 'paths';
+import * as React from 'react';
+import * as paths from '../../../paths';
 
-import Logo from 'components/common/Logo/Logo';
+import Logo from '../../../components/common/Logo/Logo';
 import {Link, Route, Switch} from 'react-router-dom';
-import FooterContainer from 'components/layout/Footer/FooterContainer';
-import FormSignupContainer from 'components/layout/FormSignup/FormSignupContainer';
-import FormSigninContainer from 'components/layout/FormSignin/FormSigninContainer';
+import FooterContainer from '../../../components/layout/Footer/FooterContainer';
+import FormSignupContainer from '../../../components/layout/FormSignup/FormSignupContainer';
+import FormSigninContainer from '../../../components/layout/FormSignin/FormSigninContainer';
 
 /**
  * Entry page

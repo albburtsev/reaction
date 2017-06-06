@@ -10,7 +10,7 @@ interface FooterProps {
 /**
  * Footer with useless information
  */
-const Footer: React.SFC<FooterProps> = ({description, version}) =>
+const Footer = ({description, version}: FooterProps) =>
     <footer className={styles.footer}>
         {description}, v{version}
     </footer>
