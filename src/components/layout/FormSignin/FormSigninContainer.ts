@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
 import FormSignin from './FormSignin';
 
-import {Store} from 'reducers'
-import * as formsActions from 'ducks/formsDuck';
+import {Store} from '../../../reducers'
+import * as formsActions from '../../../ducks/formsDuck';
 
 export default connect(
     ({forms: {signin}}: Store) => ({

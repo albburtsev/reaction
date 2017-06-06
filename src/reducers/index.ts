@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
-import meta, {MetaStore} from 'ducks/metaDuck';
-import forms, {FormsStore} from 'ducks/formsDuck';
+import meta, {MetaStore} from '../ducks/metaDuck';
+import forms, {FormsStore} from '../ducks/formsDuck';
 
 export interface Store {
     meta: MetaStore,
