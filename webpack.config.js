@@ -9,7 +9,7 @@ var _ = require('lodash'),
 module.exports = {
     entry: {
         app: [
-            path.join(sourcePath, 'app.js')
+            path.join(sourcePath, 'app.tsx')
         ],
         vendors: [
             'react',
