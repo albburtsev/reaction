@@ -9,7 +9,7 @@
     "noImplicitAny": true,
     "experimentalDecorators": true,
     "module": "commonjs",
-    "target": "ES5",
+    "target": "es5",
     "jsx": "react"
   },
   "include": [
