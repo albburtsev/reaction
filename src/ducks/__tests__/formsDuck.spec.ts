@@ -1,20 +1,15 @@
-import {createStore} from 'store';
-import schema from 'reducers/schema';
-import * as formsActions from 'ducks/formsDuck';
+import {createStore} from '../../store';
+import * as formsActions from '../formsDuck';
 
 describe('Forms store', () => {
-    let store = null;
+    let store = null as any;
 
     beforeEach(() => {
         store = createStore();
     });
 
-    test('should have initial value', () => {
-        expect(store.getState().forms).toEqual(schema.forms);
-    });
-
     test('should update field values', () => {
-        const getFieldvalue = (form, name) =>
+        const getFieldvalue = (form: string, name: string) =>
             store.getState().forms[form][name];
         const form = 'signin';
         const name = 'login';

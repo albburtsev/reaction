@@ -19,7 +19,11 @@ module.exports = merge(commonConfig, {
         loaders: [
             {
                 test: /\.styl$/,
-                loader: 'style!css?localIdentName=[name]__[local]__[hash:base64:5]&modules!stylus'
+                loaders: [
+                    'style',
+                    'typings-for-css-modules?modules&namedExport&camelCase',
+                    'stylus'
+                ]
             }
         ]
     }

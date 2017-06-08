@@ -1,0 +1,9 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "search.exclude": {
+        "logs": true,
+        "coverage": true,
+        "node_modules": true
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib"
+}

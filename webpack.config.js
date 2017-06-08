@@ -9,7 +9,7 @@ var _ = require('lodash'),
 module.exports = {
     entry: {
         app: [
-            path.join(sourcePath, 'app.js')
+            path.join(sourcePath, 'app.tsx')
         ],
         vendors: [
             'react',
@@ -22,10 +22,7 @@ module.exports = {
     },
     resolve: {
         root: [sourcePath],
-        extensions: ['', '.ts', '.tsx', '.js', '.jsx']
-    },
-    resolveLoader: {
-        root: [nodePath]
+        extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.json']
     },
     output: {
         path: buildPath,
@@ -46,7 +43,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.(ts|tsx)?$/,
-                loader: 'ts'
+                loader: 'awesome-typescript-loader'
             },
             {
                 test: /\.(js|jsx)$/,
