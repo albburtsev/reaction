@@ -45,7 +45,7 @@ export const update = (
 ): UpdateAction =>
     ({type: FORMS_UPDATE, form, name, value});
 
-export default (state: FormsStore = defaultState(), action?: UpdateAction): FormsStore => {
+export default (state: FormsStore = defaultState(), action: UpdateAction): FormsStore => {
     switch (action.type) {
         case FORMS_UPDATE:
             // @todo: waiting for immutable state
