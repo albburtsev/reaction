@@ -1,5 +1,5 @@
 import * as  React from 'react';
-// import * as styles from './Input.styl';
+import * as styles from './Input.styl';
 
 export interface InputProps {
     inputProps: React.HTMLAttributes<HTMLInputElement>,
@@ -14,10 +14,10 @@ export class Input extends React.Component<InputProps, any> {
         let {inputProps, onChange} = this.props;
 
         return (
-            <label className="label">
+            <label className={styles.label}>
                 <input
                     {...inputProps}
-                    className="input"
+                    className={styles.input}
                     onChange={onChange}
                 />
             </label>
