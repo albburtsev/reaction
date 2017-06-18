@@ -14,7 +14,9 @@
     "build-info": "NODE_ENV=production webpack --colors --display-modules --config=webpack.config.prod.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "jest": {
     "modulePaths": [
@@ -89,6 +91,8 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.16.2",
     "react-dev-utils": "^0.4.1",
+    "react-docgen-typescript": "^0.0.11",
+    "react-styleguidist": "^5.4.4",
     "redux-devtools-extension": "^2.13.0",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.0",

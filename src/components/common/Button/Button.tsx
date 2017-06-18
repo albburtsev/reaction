@@ -12,7 +12,10 @@ export interface ButtonProps {
     preset?: ButtonPreset
 }
 
-export default class Button extends React.Component<ButtonProps, any> {
+/**
+ * Plain button
+ */
+export class Button extends React.Component<ButtonProps, any> {
     render(): React.ReactElement<any> {
         const {preset, children} = this.props;
 
@@ -23,3 +26,5 @@ export default class Button extends React.Component<ButtonProps, any> {
         );
     }
 };
+
+export default Button;
