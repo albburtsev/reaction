@@ -1,9 +1,9 @@
 module.exports = {
     verbose: true,
-    defaultExample: true,
+    // defaultExample: true,
     title: 'React Style Guide Example',
     // components: 'src/components/**/*.{jsx,tsx}',
-    components: 'src/components/common/Input/Input*.tsx',
+    components: 'src/components/common/Input/*.tsx',
     propsParser: require('react-docgen-typescript').parse,
     webpackConfig: {
         module: {
