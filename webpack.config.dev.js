@@ -16,15 +16,20 @@ module.exports = merge(commonConfig, {
         new webpack.HotModuleReplacementPlugin()
     ],
     module: {
-        loaders: [
-            {
-                test: /\.styl$/,
-                loaders: [
-                    'style',
-                    'typings-for-css-modules?modules&namedExport&camelCase',
-                    'stylus'
-                ]
-            }
-        ]
+        rules: [{
+            test: /\.styl$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'typings-for-css-modules-loader',
+                options: {
+                    modules: true,
+                    namedExport: true,
+                    camelCase: true
+                }
+            }, {
+                loader: 'stylus-loader'
+            }]
+        }]
     }
 });

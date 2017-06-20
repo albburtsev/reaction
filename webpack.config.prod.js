@@ -1,4 +1,4 @@
-let _ = require('lodash'),
+var _ = require('lodash'),
     webpack = require('webpack'),
     merge = require('webpack-merge'),
     commonConfig = require('./webpack.config'),
@@ -26,27 +26,35 @@ module.exports = merge(commonConfig, {
             },
             output: {
                 comments: false
-            }
+            },
+            sourceMap: true
         }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify('production')
             }
         }),
-        new ExtractTextPlugin('[name].css', {
+        new ExtractTextPlugin({
+            filename: '[name].css',
             allChunks: true
         }),
         new webpack.BannerPlugin(banner)
     ],
     module: {
-        loaders: [
-            {
-                test: /\.styl$/,
-                loader: ExtractTextPlugin.extract(
-                    'style',
-                    'css?localIdentName=[name]__[local]__[hash:base64:5]&modules!stylus'
-                )
-            }
-        ]
+        rules: [{
+            test: /\.styl$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [{
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        localIdentName: '[name]__[local]__[hash:base64:5]'
+                    }
+                }, {
+                    loader: 'stylus-loader'
+                }]
+            })
+        }]
     }
 });
