@@ -21,8 +21,8 @@ module.exports = {
         ]
     },
     resolve: {
-        root: [sourcePath],
-        extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        modules: [sourcePath, 'node_modules']
     },
     output: {
         path: buildPath,
@@ -30,45 +30,42 @@ module.exports = {
         filename: '[name].bundle.js'
     },
     module: {
-        preLoaders: [
-            {
-                test: /\.(js|jsx)$/,
-                loader: 'eslint'
-            },
-            {
-                test: /\.js$/,
-                loader: 'source-map-loader'
-            }
-        ],
-        loaders: [
-            {
-                test: /\.(ts|tsx)?$/,
+        rules: [{
+            test: /\.(ts|tsx)?$/,
+            use: [{
                 loader: 'awesome-typescript-loader'
-            },
-            {
-                test: /\.(js|jsx)$/,
-                exclude: nodePath,
-                loader: 'babel'
-            },
-            {
-                test: /\.(json)$/,
-                loader: 'json'
-            },
-            {
-                test: /\.css$/,
-                loaders: ['style', 'css']
-            },
-            {
-                test: /\.png$/,
-                loader: 'file'
-            }
-        ]
-    },
-    stylus: {
-        import: [
-            '~styl/palette.styl',
-            '~styl/typography.styl'
-        ]
+            }]
+        }, {
+            test: /\.(js|jsx)$/,
+            exclude: nodePath,
+            use: [{
+                loader: 'babel-loader'
+            }]
+        }, {
+            test: /\.css$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader'
+            }]
+        }, {
+            test: /\.png$/,
+            use: [{
+                loader: 'file-loader'
+            }]
+        }, {
+            test: /\.(js|jsx)$/,
+            use: [{
+                loader: 'eslint-loader'
+            }],
+            enforce: 'pre'
+        }, {
+            test: /\.js$/,
+            use: [{
+                loader: 'source-map-loader'
+            }],
+            enforce: 'pre'
+        }]
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
@@ -78,7 +75,17 @@ module.exports = {
             React: 'react',
             ReactDOM: 'react-dom'
         }),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                stylus: {
+                    import: [
+                        '~styl/palette.styl',
+                        '~styl/typography.styl'
+                    ]
+                }
+            }
+        })
     ],
     devtool: 'source-map'
 };
