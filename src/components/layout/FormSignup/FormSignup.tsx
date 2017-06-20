@@ -7,16 +7,16 @@ import {Link} from 'react-router-dom';
 import Input from '../../../components/common/Input/Input';
 import Button, {ButtonPreset} from '../../../components/common/Button/Button';
 
-interface FormSignupProps {
+interface IFormSignupProps {
     form: {
-        name: string,
-        login: string,
-        password: string
-    },
-    onChange: React.EventHandler<React.FormEvent<EventTarget>>
+        name: string;
+        login: string;
+        password: string;
+    };
+    onChange: React.EventHandler<React.FormEvent<EventTarget>>;
 }
 
-const FormSignup: React.SFC<FormSignupProps> = ({form: {name, login, password}, onChange}) =>
+const FormSignup: React.SFC<IFormSignupProps> = ({form: {name, login, password}, onChange}) =>
     <form>
         <p className={styles.hint}>
             <Link to={PATH_SIGNIN}>Already have an account? Sign in</Link>

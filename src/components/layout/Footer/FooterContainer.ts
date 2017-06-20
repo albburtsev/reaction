@@ -1,9 +1,9 @@
 import {connect} from 'react-redux';
 
 import Footer from './Footer';
-import {Store} from '../../../reducers';
+import {IStore} from '../../../reducers';
 
-const mapStateToProps = ({meta: {description, version}}: Store) => ({
+const mapStateToProps = ({meta: {description, version}}: IStore) => ({
     description,
     version
 });

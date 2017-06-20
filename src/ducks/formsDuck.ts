@@ -1,29 +1,29 @@
 const FORMS_UPDATE = 'FORMS_UPDATE';
 
-export interface FormSigninStore {
-    login: string,
-    password: string
+export interface IFormSigninStore {
+    login: string;
+    password: string;
 }
 
-export interface FormSignupStore {
-    name: string,
-    login: string,
-    password: string
+export interface IFormSignupStore {
+    name: string;
+    login: string;
+    password: string;
 }
 
-export interface FormsStore {
-    signin: FormSigninStore,
-    signup: FormSignupStore
+export interface IFormsStore {
+    signin: IFormSigninStore;
+    signup: IFormSignupStore;
 }
 
-export interface UpdateAction {
-    type: string,
-    form: keyof FormsStore,
-    name: string,
-    value: string
+export interface IUpdateAction {
+    type: string;
+    form: keyof IFormsStore;
+    name: string;
+    value: string;
 }
 
-const defaultState = (): FormsStore => ({
+const defaultState = (): IFormsStore => ({
     signin: {
         login: '',
         password: ''
@@ -39,13 +39,13 @@ const defaultState = (): FormsStore => ({
  * Creates action for updating field value
  */
 export const update = (
-    form: keyof FormsStore,
+    form: keyof IFormsStore,
     name: string,
     value: string
-): UpdateAction =>
+): IUpdateAction =>
     ({type: FORMS_UPDATE, form, name, value});
 
-export default (state: FormsStore = defaultState(), action: UpdateAction): FormsStore => {
+export default (state: IFormsStore = defaultState(), action: IUpdateAction): IFormsStore => {
     switch (action.type) {
         case FORMS_UPDATE:
             // @todo: waiting for immutable state
