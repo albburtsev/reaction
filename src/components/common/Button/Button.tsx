@@ -8,14 +8,14 @@ export enum ButtonPreset {
     Accent = presetAccent as any
 }
 
-export interface ButtonProps {
-    preset?: ButtonPreset
+export interface IButtonProps {
+    preset?: ButtonPreset;
 }
 
 /**
  * Plain button
  */
-export class Button extends React.Component<ButtonProps, any> {
+export class Button extends React.Component<IButtonProps, any> {
     render(): React.ReactElement<any> {
         const {preset, children} = this.props;
 
@@ -25,6 +25,6 @@ export class Button extends React.Component<ButtonProps, any> {
             </button>
         );
     }
-};
+}
 
 export default Button;

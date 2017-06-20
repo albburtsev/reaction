@@ -1,10 +1,10 @@
 import {connect, Dispatch} from 'react-redux';
 import FormSignin from './FormSignin';
 
-import {Store} from '../../../reducers'
+import {IStore} from '../../../reducers';
 import * as formsActions from '../../../ducks/formsDuck';
 
-const mapStateToProps = ({forms: {signin}}: Store) => ({
+const mapStateToProps = ({forms: {signin}}: IStore) => ({
     form: signin
 });
 

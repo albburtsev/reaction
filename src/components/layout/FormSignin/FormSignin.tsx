@@ -7,15 +7,15 @@ import Button, {ButtonPreset} from '../../../components/common/Button/Button';
 
 import * as styles from './FormSignin.styl';
 
-interface FormSigninProps {
+interface IFormSigninProps {
     form: {
-        login: string,
-        password: string
-    },
-    onChange: React.EventHandler<React.FormEvent<EventTarget>>
+        login: string;
+        password: string;
+    };
+    onChange: React.EventHandler<React.FormEvent<EventTarget>>;
 }
 
-const FormSignin: React.SFC<FormSigninProps> = ({form: {login, password}, onChange}) =>
+const FormSignin: React.SFC<IFormSigninProps> = ({form: {login, password}, onChange}) =>
     <form>
         <p className={styles.hint}>
             <Link to={PATH_SIGNUP}>Don't have an account? Sign up</Link>

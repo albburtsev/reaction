@@ -9,7 +9,9 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "lint": "eslint src/ test/ --ext .js --ext .jsx",
+    "lint:es": "eslint src/ test/ --ext .js --ext .jsx",
+    "lint:ts": "tslint '{src,test}/**/*.{ts,tsx}' -e 'src/**/*.d.ts' -- --project=tsconfig.json",
+    "lint": "npm run lint:es & npm run lint:ts",
     "build": "NODE_ENV=production webpack --config=webpack.config.prod.js",
     "build-info": "NODE_ENV=production webpack --colors --display-modules --config=webpack.config.prod.js",
     "test": "jest",
@@ -99,6 +101,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
     "ts-jest": "^20.0.5",
+    "tslint": "^5.4.3",
     "typescript": "^2.3.4",
     "typings-for-css-modules-loader": "^1.5.0",
     "webpack": "^1.14.0",

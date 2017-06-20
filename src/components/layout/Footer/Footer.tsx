@@ -2,15 +2,15 @@ import * as React from 'react';
 
 import * as styles from './Footer.styl';
 
-interface FooterProps {
-    version: string,
-    description: string
+interface IFooterProps {
+    version: string;
+    description: string;
 }
 
 /**
  * Footer with useless information
  */
-const Footer = ({description, version}: FooterProps) =>
+const Footer = ({description, version}: IFooterProps) =>
     <footer className={styles.footer}>
         {description}, v{version}
     </footer>
