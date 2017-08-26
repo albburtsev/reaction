@@ -20,7 +20,9 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "precommit": "npm run lint",
-    "prepush": "npm run lint & npm test"
+    "prepush": "npm run lint & npm test",
+    "clean": "rm -rf build/ coverage/ demo/",
+    "demo": "bash scripts/demo.sh"
   },
   "jest": {
     "modulePaths": [

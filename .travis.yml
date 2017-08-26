@@ -5,10 +5,18 @@ cache: yarn
 
 before_script:
   - yarn run lint
+  - yarn test
+
+install:
+  - yarn
+
+script:
+  - yarn run demo
 
 deploy:
   provider: pages
   skip_cleanup: true
+  local_dir: $TRAVIS_BUILD_DIR/demo
   github_token: $GITHUB_TOKEN
   on:
     branch: master
