@@ -22,7 +22,9 @@
     "precommit": "npm run lint",
     "prepush": "npm run lint & npm test",
     "clean": "rm -rf build/ coverage/ demo/",
-    "demo": "bash scripts/demo.sh"
+    "demo": "bash scripts/demo.sh",
+    "release": "standard-version",
+    "commit": "git-cz"
   },
   "jest": {
     "modulePaths": [
@@ -84,8 +86,10 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "chalk": "^1.1.0",
+    "commitizen": "^2.9.6",
     "connect-history-api-fallback": "^1.3.0",
     "css-loader": "^0.28.4",
+    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^3.6.1",
     "eslint-loader": "^1.8.0",
     "eslint-plugin-babel": "^3.0.0",
@@ -102,6 +106,7 @@
     "react-styleguidist": "^5.4.4",
     "redux-devtools-extension": "^2.13.0",
     "source-map-loader": "^0.1.5",
+    "standard-version": "^4.2.0",
     "style-loader": "^0.18.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
@@ -113,5 +118,10 @@
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-merge": "^4.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
