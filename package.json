@@ -1,6 +1,6 @@
 {
   "name": "reaction",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React/Redux/ReactRouter starter kit",
   "main": "index.js",
   "engines": {
@@ -23,7 +23,7 @@
     "prepush": "npm run lint & npm test",
     "clean": "rm -rf build/ coverage/ demo/",
     "demo": "bash scripts/demo.sh",
-    "release": "standard-version",
+    "release": "standard-version && git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)",
     "commit": "git-cz"
   },
   "jest": {
