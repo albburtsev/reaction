@@ -46,10 +46,11 @@ module.exports = merge(commonConfig, {
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
                 use: [{
-                    loader: 'css-loader',
+                    loader: 'typings-for-css-modules-loader',
                     options: {
                         modules: true,
-                        localIdentName: '[name]__[local]__[hash:base64:5]'
+                        namedExport: true,
+                        camelCase: true
                     }
                 }, {
                     loader: 'stylus-loader'
