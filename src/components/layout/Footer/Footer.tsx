@@ -12,6 +12,7 @@ interface IFooterProps {
  */
 const Footer = ({description, version}: IFooterProps) =>
     <footer className={styles.footer}>
+        <a className={styles.githubLink} href="https://github.com/albburtsev/reaction"></a>
         {description}, v{version}
     </footer>
 ;
