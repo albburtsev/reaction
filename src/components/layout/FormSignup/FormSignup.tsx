@@ -51,9 +51,10 @@ const FormSignup: React.SFC<IFormSignupProps> = ({ form: { name, login, password
             }}
             onChange={onChange}
         />
-        <p className={styles.button}>
+        <div className={styles.button}>
+            <span title="Licensing Agreements" className={styles.license} />
             <Button preset={ButtonPreset.Accent}>Sign up</Button>
-        </p>
+        </div>
     </form>
 );
 
