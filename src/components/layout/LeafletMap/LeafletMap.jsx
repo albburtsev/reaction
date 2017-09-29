@@ -1,7 +1,7 @@
 import styles from './LeafletMap.styl';
 
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 /**
  * Component LeafletMap
@@ -31,8 +31,8 @@ class LeafletMap extends Component {
     createMap() {
         require.ensure([], () => {
             let Leaflet = require('leaflet'),
-                {lon, lat, zoom, tileURL} = this.props,
-                {container} = this.refs;
+                { lon, lat, zoom, tileURL } = this.props,
+                { container } = this.refs;
 
             // Load Leaflet styles
             require('leaflet/dist/leaflet.css');
@@ -41,8 +41,7 @@ class LeafletMap extends Component {
             let layer = Leaflet.tileLayer(tileURL);
 
             // Create map
-            this.map = Leaflet
-                .map(container)
+            this.map = Leaflet.map(container)
                 .setView([lat, lon], zoom)
                 .addLayer(layer);
         });

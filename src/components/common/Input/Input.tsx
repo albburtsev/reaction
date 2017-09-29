@@ -1,4 +1,4 @@
-import * as  React from 'react';
+import * as React from 'react';
 import * as styles from './Input.styl';
 
 export interface InputProps {
@@ -11,15 +11,11 @@ export interface InputProps {
  */
 export class Input extends React.Component<InputProps, any> {
     render() {
-        const {inputProps, onChange} = this.props;
+        const { inputProps, onChange } = this.props;
 
         return (
             <label className={styles.label}>
-                <input
-                    {...inputProps}
-                    className={styles.input}
-                    onChange={onChange}
-                />
+                <input {...inputProps} className={styles.input} onChange={onChange} />
             </label>
         );
     }

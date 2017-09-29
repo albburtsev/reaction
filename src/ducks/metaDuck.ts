@@ -5,5 +5,4 @@ export interface IMetaStore {
     version: string;
 }
 
-export default (): IMetaStore =>
-    ({...pkg});
+export default (): IMetaStore => ({ ...pkg });

@@ -38,12 +38,12 @@ const defaultState = (): IFormsStore => ({
 /**
  * Creates action for updating field value
  */
-export const update = (
-    form: keyof IFormsStore,
-    name: string,
-    value: string
-): IUpdateAction =>
-    ({type: FORMS_UPDATE, form, name, value});
+export const update = (form: keyof IFormsStore, name: string, value: string): IUpdateAction => ({
+    type: FORMS_UPDATE,
+    form,
+    name,
+    value
+});
 
 export default (state: IFormsStore = defaultState(), action: IUpdateAction): IFormsStore => {
     switch (action.type) {

@@ -1,11 +1,11 @@
 import * as styles from './FormSignup.styl';
 
 import * as React from 'react';
-import {PATH_SIGNIN} from '../../../paths';
+import { PATH_SIGNIN } from '../../../paths';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Input from '../../../components/common/Input/Input';
-import Button, {ButtonPreset} from '../../../components/common/Button/Button';
+import Button, { ButtonPreset } from '../../../components/common/Button/Button';
 
 interface IFormSignupProps {
     form: {
@@ -16,7 +16,7 @@ interface IFormSignupProps {
     onChange: React.EventHandler<React.FormEvent<EventTarget>>;
 }
 
-const FormSignup: React.SFC<IFormSignupProps> = ({form: {name, login, password}, onChange}) =>
+const FormSignup: React.SFC<IFormSignupProps> = ({ form: { name, login, password }, onChange }) => (
     <form>
         <p className={styles.hint}>
             <Link to={PATH_SIGNIN}>Already have an account? Sign in</Link>
@@ -55,6 +55,6 @@ const FormSignup: React.SFC<IFormSignupProps> = ({form: {name, login, password},
             <Button preset={ButtonPreset.Accent}>Sign up</Button>
         </p>
     </form>
-;
+);
 
 export default FormSignup;

@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as paths from '../../../paths';
 
 import Logo from '../../../components/common/Logo/Logo';
-import {Link, Route, Switch} from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import FooterContainer from '../../../components/layout/Footer/FooterContainer';
 import FormSignupContainer from '../../../components/layout/FormSignup/FormSignupContainer';
 import FormSigninContainer from '../../../components/layout/FormSignin/FormSigninContainer';
@@ -12,7 +12,7 @@ import FormSigninContainer from '../../../components/layout/FormSignin/FormSigni
 /**
  * Entry page
  */
-const PageEntry = () =>
+const PageEntry = () => (
     <div className={styles.page}>
         <div className={styles.content}>
             <Link className={styles.logo} to={paths.PATH_ENTRY}>
@@ -26,6 +26,6 @@ const PageEntry = () =>
         </div>
         <FooterContainer />
     </div>
-;
+);
 
 export default PageEntry;
