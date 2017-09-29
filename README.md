@@ -7,8 +7,8 @@ Let's try
 ```
 git clone git@github.com:albburtsev/reaction.git
 cd reaction/
-npm install
-npm start
+yarn
+yarn start
 ```
 
 Then open [0.0.0.0:3000](http://0.0.0.0:3000/) in your browser and try to edit any component.
