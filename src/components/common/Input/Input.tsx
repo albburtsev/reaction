@@ -2,7 +2,7 @@ import * as  React from 'react';
 import * as styles from './Input.styl';
 
 export interface InputProps {
-    inputProps: React.HTMLAttributes<HTMLInputElement>;
+    inputProps: React.InputHTMLAttributes<EventTarget>;
     onChange: React.EventHandler<React.FormEvent<EventTarget>>;
 }
 
