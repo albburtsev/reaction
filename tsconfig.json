@@ -2,9 +2,7 @@
   "compilerOptions": {
     "outDir": "./build/",
     "baseUrl": ".",
-    "rootDirs": [
-      "src/"
-    ],
+    "rootDirs": ["src/"],
     "sourceMap": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -13,8 +11,5 @@
     "target": "es5",
     "jsx": "react"
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/components/**/*.tsx"
-  ]
+  "include": ["./src/**/*.ts", "./src/components/**/*.tsx"]
 }
