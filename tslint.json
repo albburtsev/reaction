@@ -1,7 +1,8 @@
 {
     "defaultSeverity": "warning",
     "extends": [
-        "tslint:recommended"
+        "tslint:recommended",
+        "tslint-config-prettier"
     ],
     "jsRules": {},
     "rules": {
@@ -11,7 +12,7 @@
         "object-literal-sort-keys": false,
         "no-shadowed-variable": false,
         "member-access": [true, "no-public"],
-        "quotemark": [true, "single", "jsx-double"],
+        "quotemark": [true, "single", "jsx-double", "avoid-escape"],
         "trailing-comma": [true, {
             "multiline": {
                 "objects": "never",
