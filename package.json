@@ -10,8 +10,7 @@
     "scripts": {
         "start": "node scripts/start.js",
         "lint:es": "eslint src/ scripts/ --ext .js --ext .jsx",
-        "lint:ts":
-            "tslint 'src/**/*.{ts,tsx}' -e 'src/**/*.d.ts' -- --project=tsconfig.json",
+        "lint:ts": "tslint 'src/**/*.{ts,tsx}' -e 'src/**/*.d.ts' -- --project=tsconfig.json",
         "lint": "yarn run lint:es && yarn run lint:ts",
         "build": "NODE_ENV=production webpack --config=webpack.config.prod.js",
         "build-info":
@@ -21,8 +20,8 @@
         "test:coverage": "jest --coverage",
         "styleguide": "styleguidist server",
         "styleguide:build": "styleguidist build",
-        "precommit": "yarn run lint",
-        "prepush": "yarn run lint & yarn test",
+        "precommit": "lint-staged",
+        "prepush": "yarn run lint && yarn test",
         "clean": "rm -rf build/ coverage/ demo/",
         "demo": "bash scripts/demo.sh",
         "release":
@@ -58,6 +57,7 @@
         "babel-jest": "^19.0.0",
         "classnames": "^2.2.5",
         "leaflet": "1.0.0-beta.1",
+        "lint-staged": "^4.2.3",
         "prettier": "^1.7.2",
         "prop-types": "^15.6.0",
         "react": "^16.0.0",
