@@ -1,6 +1,6 @@
 {
     "name": "reaction",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "React/Redux/ReactRouter starter kit",
     "main": "index.js",
     "engines": {
