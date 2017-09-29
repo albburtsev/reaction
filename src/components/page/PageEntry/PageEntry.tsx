@@ -3,7 +3,7 @@ import * as styles from './PageEntry.styl';
 import * as React from 'react';
 import * as paths from '../../../paths';
 
-import Logo from '../../../components/common/Logo/Logo';
+import Logo from '../../../components/common/Logo';
 import { Link, Route, Switch } from 'react-router-dom';
 import FooterContainer from '../../../components/layout/Footer/FooterContainer';
 import FormSignupContainer from '../../../components/layout/FormSignup/FormSignupContainer';

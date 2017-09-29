@@ -2,8 +2,8 @@ import * as React from 'react';
 import { PATH_SIGNUP } from '../../../paths';
 
 import { Link } from 'react-router-dom';
-import Input from '../../../components/common/Input/Input';
-import Button, { ButtonPreset } from '../../../components/common/Button/Button';
+import Input from '../../../components/common/Input';
+import Button, { ButtonPreset } from '../../../components/common/Button';
 
 import * as styles from './FormSignin.styl';
 
