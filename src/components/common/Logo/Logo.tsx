@@ -8,9 +8,7 @@ export interface ILogoProps {}
  */
 export class Logo extends React.Component<ILogoProps, any> {
     render() {
-        return (
-            <span className={styles.logo} />
-        );
+        return <span className={styles.logo} />;
     }
 }
 

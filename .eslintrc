@@ -138,7 +138,7 @@
         "no-trailing-spaces": 1,
         "no-underscore-dangle": 0,
         "no-unneeded-ternary": 2,
-        "object-curly-spacing": [1, "never"],
+        "object-curly-spacing": [1, "always"],
         "one-var": 0,
         "operator-assignment": [2, "always"],
         "operator-linebreak": 0,
@@ -154,7 +154,7 @@
         "keyword-spacing": ["error", {"after": true}],
         "space-before-blocks": [1, "always"],
         "space-before-function-paren": [1, {
-            "anonymous": "always",
+            "anonymous": "never",
             "named": "never"
         }],
         "space-in-parens": [1, "never"],

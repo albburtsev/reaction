@@ -1,4 +1,4 @@
-import {createStore} from '../../store';
+import { createStore } from '../../store';
 import * as formsActions from '../formsDuck';
 
 describe('Forms store', () => {
@@ -9,8 +9,7 @@ describe('Forms store', () => {
     });
 
     test('should update field values', () => {
-        const getFieldvalue = (form: string, name: string) =>
-            store.getState().forms[form][name];
+        const getFieldvalue = (form: string, name: string) => store.getState().forms[form][name];
         const form = 'signin';
         const name = 'login';
         const value = 'Alex';

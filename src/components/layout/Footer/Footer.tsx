@@ -10,11 +10,11 @@ interface IFooterProps {
 /**
  * Footer with useless information
  */
-const Footer = ({description, version}: IFooterProps) =>
+const Footer = ({ description, version }: IFooterProps) => (
     <footer className={styles.footer}>
-        <a className={styles.githubLink} href="https://github.com/albburtsev/reaction"></a>
+        <a className={styles.githubLink} href="https://github.com/albburtsev/reaction" />
         {description}, v{version}
     </footer>
-;
+);
 
 export default Footer;

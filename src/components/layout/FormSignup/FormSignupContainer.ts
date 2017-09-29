@@ -1,25 +1,25 @@
-import {connect, Dispatch} from 'react-redux';
+import { connect, Dispatch } from 'react-redux';
 import FormSignup from './FormSignup';
 
-import {IStore} from '../../../reducers';
+import { IStore } from '../../../reducers';
 import * as formsActions from '../../../ducks/formsDuck';
 
-const mapStateToProps = ({forms: {signup}}: IStore) => ({
+const mapStateToProps = ({ forms: { signup } }: IStore) => ({
     form: signup
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
-    onChange({target}: React.SyntheticEvent<EventTarget>) {
-        const {name, value} = target as HTMLInputElement;
+    onChange({ target }: React.SyntheticEvent<EventTarget>) {
+        const { name, value } = target as HTMLInputElement;
         dispatch(formsActions.update('signup', name, value));
     }
 });
 
-const FormSignupContainer =  connect(
+const FormSignupContainer = connect(
     mapStateToProps,
     mapDispatchToProps,
     null,
-    {pure: false} // @todo: waiting for immutable store
+    { pure: false } // @todo: waiting for immutable store
 )(FormSignup);
 
 export default FormSignupContainer as React.ComponentClass<any>;
